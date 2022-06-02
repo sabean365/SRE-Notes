@@ -150,3 +150,7 @@ MANAGER FEEDBACK: What would you do if the manager said...
 	"Wants them to ask more questions and speak up. Don't be shy, voice opinions or ask questions in meetings."
 		Prepare and practice your questions ahead of time; write down the questions so you are not too nervous to speak.
 		Work your way into being comfortable.
+
+	"Would like to see you take that next step in ownership and self-development with new topics."
+		Upskilling
+		Check in with management and team about what you need to learn.

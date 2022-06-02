@@ -21,4 +21,3 @@ Azure DevOps (ADO):  tools and services like for example Repos, Pipelines, Board
 Azure Pipeline Agents:  used to build your code, execute scripts or deploy your software. An agent is computing infrastructure using Windows, MacOS or Linux with installed agent software that runs one job at a time.
 
 
-YouTube.com/PsyberMind - There isn't much on there

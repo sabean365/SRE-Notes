@@ -10,14 +10,13 @@ Site Reliability Engineering
 	
 	Developer -> App					Operate and maintain the application
 	
-															load balance
+				load balance
 													
 	Domain -> host						Server1 - host application			Server2 - host 
-												  operate and maintain				  second copy of code
-												  the application
-												  AWS
-	
-										Deploy the updated code
+	  							operate and maintain				  second copy of code
+								the application
+								 AWS
+								Deploy the updated code
 	
 	Context: Launching a new feature vs reliability
 	Product Teams want to move fast

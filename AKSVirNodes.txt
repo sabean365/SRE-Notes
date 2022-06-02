@@ -51,4 +51,3 @@ AKS VIRTUAL NODES ~ Only Azure
 	Can only attach mysql to a disk through a VM
 
 
-az aks enable-addons -n aksdemo1 -g aks-rg1  -a virtual-node --subnet virtual-kubelet-aci-subnet

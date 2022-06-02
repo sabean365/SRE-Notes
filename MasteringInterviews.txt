@@ -32,22 +32,18 @@ A JUMPro looked up the "optional tech" technologies
 
 TOP SOFT SKILLS INTERVIEW QUESTIONS
 	Tell me about yourself -> Use your elevator pitch 
-	1. Explain who you are - Educational/Professional - 3 technologies that you are competent in -> I have always had a passion for technology, engineering and science in general. 
-	I am a recent graduate with a B.A.S. in Technology Development with software development as my subplan, so .  I also recently was certified as a scrum master because I love the Agile methodology.  I am currently in the Jump program for SRE, and I am
-	learning more and recollecting what I have learned with Linux, networks, cloud technologies, pushing code, and automation
-	2. What are you aiming to achieve in your career? I am aiming to become a team lead because I have a lot of experience identifying strengths in team members and encouraging them to use those skills for the team
-	3. Unique selling point - Why you? Behavioral - passion of continuously learning - I'm a great student and can learn just about anything I set my mind on learning, 
-		love pulling a team together cohesively in a fun, agile way, specifically people over processes - I am dedicated and really care about my work - whatever that may be. I am intentional, serious, and always looking for ways to improve efficiency.
+	1. Explain who you are - Educational/Professional - 3 technologies that you are competent in 
+	2. What are you aiming to achieve in your career? 
+	3. Unique selling point - Why you? 
 		
 Creating your brand and have your message down
 	1. Crating a lasting first impression
 	2. 3 Core Messages
 	3. Be prepared for small talk - do not say good if they ask how is your day so far?  remember to ask back "how is your day going so far?"
 	
-Strengths and Weakness
-	1. Continously learning with the aim of seeking the best processes while staying adaptable to the guidance of leadership and aware of risk management
-	2. Sometimes, when I am learning a new technology, I am too literal and want to know all possible scenarios and best practices, and that sometimes slows me down. I am learning to focus on only what I need to do in that role and let go of the rest.
-		I tell myself that I need to stay calm in all things because anxieties only lead to freezing up.
+Strengths and Weakness -> know yourself
+	1. Biggest Strength
+	2. Biggest Weakness
 	
 Additional Common QUESTIONS
 	Teamwork/Leadership
@@ -60,10 +56,9 @@ Additional Common QUESTIONS
 	Jump Experience 
 	
 Situation QUESTIONS
-	How do you handle working under pressure? First, I remind myself to be calm. Second, I think about time management and how best to improve efficiency. Third, I follow an algorithmic problem solving process, in other words, one step at a time.
-	Example: I just recently worked for Capital One, and we had a lot of pressure investigating the PPP Loans with a daily case closure requirement of 3 cases per day. I developed a template and a process that allowed me to achieve a metric of 7.1 cases per day.
+	How do you handle working under pressure? 
 	
-	STAR
+	-> USE STAR
 	Situation: What was the situation
 	Task: What had to be done
 	Action: What did YOU do 
@@ -96,4 +91,8 @@ Questions you should ask -
 		-> Can you talk about a project I might be working on and what new technologies might i need?
 		-> I'm looking to upscale - what technologies would you recommend I learn? 
 		-> What are the expectations for six months and twelve months? 
-	-> Which should you not ask? salary/benefits, work/life balance, how did I do?
+		-> Thinking back to people you’ve seen do this work previously, what differentiated the ones who were good from the ones who were really great at it?
+		-> How do you measure performance success in a remote environment?
+		-> What do you see as the most challenging aspect of this job?
+		-> What do you find to be most rewarding about working at your company?
+	-> Which questions NOT TO ask? salary/benefits, work/life balance, how did I do?

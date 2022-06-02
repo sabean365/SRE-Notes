@@ -1,0 +1,152 @@
+
+Client Site Expectations
+	
+	SCENARIO: Meetings
+	Second Week - meeting about new project pertaining to everything learned in SRE training
+	-> What to do before the meeting? COME PREPARED
+		Go over technologies
+		Research how they work together
+		Bring notes and questions about what skills are needed
+	-> Meeting Expectations
+		BE EARLY - "If you're on time, you're late."
+		Come prepared, contribute and be present
+		Keep notes on what you plan to say and be confident when you speak
+		Don't be afraid to ask questions if you need clarification - this is an EXPECTATION
+		ACTIVELY listen during the ENTIRE meeting
+		Take notes - (According to Sierra, you won't remember everything.) :-)
+		
+	SCENARIO: What Works for You as a Worker
+	-> Schedule - planners, calendars, etc.
+		Consolidate into one that you can access anywhere!
+	-> How to take notes - Best practice is handwriting them because it looks better.
+		Do not take too many notes. 
+		Always note the emphasized information. 
+		Use good detail.
+	-> Where do you put your documentation? 
+		Organize in a good file system.
+		Keep bookmarks/docs/emails in folders.
+		Consider using Google docs so you can access it anywhere.
+		
+	SCENARIO: Eagerness to Learn Needs to be Showcased!
+	-> Showcaseing positivity - have you made a positive impact?
+	-> How are You Trying to Gain a Better Understanding - What outside research have you done?
+	-> Fully Diving into Each Task - How are you working to your fullest potential?
+	
+	SCENARIO: Teamwork - You Need to Be a Good Communicator and Work in Teams
+	-> Working in a team is CRITICAL in today's digital environment
+	-> There are many benefets to a team
+		Automate
+		Brainstorming
+		Sense of Community
+	-> Communication must be there.
+	
+	SCENARIO: Project Expectations --SUPER IMPORTANT!!!
+	-> Handle ambiguous directions
+	-> Do your own research
+	-> Share solutions
+	-> Take OWNERSHIP OF YOUR TASKS
+	
+	SCENARIO: Communication - Ask up front WHEN YOU START
+	-> What's the best way?
+	-> How often?
+	-> With whom?
+	
+	With Management:
+	-> Build Rapport - build a good relationship from the beginning
+	-> Establish Expectations - get on the same page of what their expetations are and EXCEED them
+	-> Share Ideas - Do not only go to them when you have a question; they want to hear your new perspective and ideas
+	-> What if the manager is... 
+		
+		busy? 
+			Seek out other resources
+			Try to plan a biweekly one on one
+			Send end of week reports - need to track your work
+		
+		pefers hands-on management?
+			Put the effort in
+			Share ideas
+			Ask questions
+			Take advantage of their time!
+			
+		wants more engagement?
+			Create solutions
+			->	Automate a process
+			->	Get more involved
+			Share resources with the team
+			Ask questions
+	
+	Communicating with Teammates
+	-> Stay Connected - set up multiple communication points: group chats, video calls, etc.
+	-> Check-in Often - Have touch points before, during and after projets to make sure you are on the same page
+	-> Team Bonding - Host small social remote meet-ups or small non-work check-ins to form bonds with your team
+	
+	STAY VISIBLE
+	-> Follow up after meetings (if necessary)
+	-> Be reponsive during work hours.
+	-> Ask questions.
+	-> Go above and beyond the expectation
+	
+	TOP JUMOROS HAVE...
+	-> Sent end of week reports
+	-> Communicated when they needed help from the start
+	-> Had down time in the beginning, but asked for upskilling materials
+	-> When a manager was out, reached out to a mentor instead of waiting for manager to return
+	
+	MAKING AN IMPACT
+	-> Agile Thinking
+	-> Quick to Automate
+	-> Learning Focused
+	-> Collaborative
+	-> Adaptive
+	-> Continuous Learning**
+		Do not EVER stand still!
+		Learn as much as you can early on - what will you need to know in the near future?
+		What process can you automate? What do you need to learn to automate this process?
+	-> Asking Questions** Relavent Questions ONLY
+		Clarification
+		Additional features/additional help on projects?
+		Deadline?
+		Checking in Points?
+		NO DUPLICATE QUESTIONS!
+		MAKE SURE YOU WRITE NOTES ON THE ANSWERS!!
+	-> Create Solutions
+		Automating a process
+		New ways of doing things
+		Look to be a subject matter expert that no one else on the team knows
+	-> Take Initiative
+		Team Player - Where/who are you helping?
+		Contribute - What value are you adding to the team?
+		Automation - How are you making the team more efficient?
+		Be Prepared - Confidence during a meeting will come from preparation.
+	
+	THE DIFFERENCE MAKERS
+	Released
+		Did not take initiative
+		Did not take meetings seriously
+		Lack of Communication
+		Asked questions too late
+		Negative attitude
+		No continuous learning - NEVER BE STAGNANT
+		
+	Converted
+		Took ownership
+		Utilized "full bandwidth"
+		Upskilled after hours
+		Contributed new ideas
+		Communicated often
+		Spoke up in meetings
+
+MANAGER FEEDBACK: What would you do if the manager said...
+	"Having trouble approaching the task. Does not know how much info they are picking up." 
+		Speak to the manager and ask questions about what they can do.
+		Write down the answers if they are giving them to you.
+		Put in clean, good efforts -- self-assessment is always a good thing.
+		If that's true, do your own research to find a way to be more effective.
+	
+	"Only committing to the minimum, not taking on challenging tasks."
+		Ask if there is more you can do or if you can help someone else.
+		Offer to do more advanced projects if the opportunity comes up.
+	
+	"Wants them to ask more questions and speak up. Don't be shy, voice opinions or ask questions in meetings."
+		Prepare and practice your questions ahead of time; write down the questions so you are not too nervous to speak.
+		Work your way into being comfortable.

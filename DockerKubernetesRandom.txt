@@ -48,19 +48,6 @@ cluster needs a mysql deployment
 
 From Networking	
 	Server Parameteres: SSL disable follow instructions
-
 	Check Allow public access from any Azure service within Azure to this server
 	
-	kubectl run -it --rm --restart=Never --image=mysql-client -- mysql -h akswebappdb-csk.mysql.database.azure.com -u dbadmin -p
-kubectl run -it --rm --restart=Never --image=mysql:5.7 mysql-client -- mysql -h akswebappdb-csk.mysql.database.azure.com -u dbadmin@aksdb -p
 
-
-mysql --host=akswebappdb.mysql.database.azure.com --user=dbadmin@akswebappdb -p
-
-01-MySql-external  change db
-02-UserManagement  change db passsword
-
-kubectl run -it --rm --restart=Never --image=mysql:5.7 mysql-client -- mysql -h akswebappdb-csk.mysql.database.azure.com -u dbadmin -pPassword123
-
-
-mysql --host=sbserv.mysql.database.azure.com --user=sabean365@sbserv -p

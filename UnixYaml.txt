@@ -1,0 +1,45 @@
+
+
+Netplan - uses YAML (yet another markup language)
+
+/etc/netplan/.
+
+test the configuration and revert back:
+	netplan try
+	
+to directly apply:
+	netplan apply
+	
+network:
+	version: 2
+	renderer: networkd (one of the possible options)
+	ethernets:
+		eth0:
+			dhcp4: yes (IPv4)
+
+network:
+	version: 2
+	renderer: NetworkManager (do not have to list machines: all network interfaces will have a dynamic IP assigned by it)
+	
+network:
+	version: 2
+	renderer: NetworkManager
+	ethernets:
+		eth0:
+			dhcp4: no (IPv4)
+			addresses: [192.168.1.50/24]
+			gateway4: 192.168.1.1 
+			nameservers:
+				search: [local]
+				addresses: [192.168.1.1,  8.8.8.8]
+		eth1: ...same
+		
+Network Scripts:		
+	It's possible to list multiple network interfaces with the ethernets in one single YAML file
+	It is also possible to have multiple YAML files - in this case, they will be processed sequentially as per numbers in their nameservers
+		01-netcfg.yaml
+		02-netcfg-test.yaml
+	In case of multiple YAML files, they will all be processed; it is impossible to exclude some processing if they exist in the directory
+
+Check the status:
+	ifconfig

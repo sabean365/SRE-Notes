@@ -1,0 +1,232 @@
+
+
+FIREWALLS - LINUX
+
+Hardware
+	Pros
+		Completely separated from any server on the internal network
+		Can serve multiple servers/subnets
+		Feature rich configuration possibilities
+	
+	Cons
+		Cost
+		Requires advanced skills, far beyone sysadmin
+		Limited scalability
+	
+Software
+	Pros
+		Cost-effective - Linux is free
+		Relatively simple to manage and to masker, on-premises or in cloud
+	
+	Cons
+		Is attached to the server on which it runs
+		Must be thoroughly monitored manually - not very friendly log files
+		
+Firewall works - "sequential match"
+	accept or deny given traffic, goes through defined rules in sequential order
+	As soon as any matching rule is found, it will be applied; no further rules would be checked
+	If no matching rules are found, the default rule will be applied. This way this default rule is defined -> VERY IMPORTANT
+
+INCOMING TRAFFIC -	SEQUENTIAL MATCH IN A CASCADING FORM
+	ACCEPT
+		Ip and/or port are not denied and match the rule for "ACCEPT"
+		The traffic is redirected as is
+		Optional audit information is logged
+	
+	REJECT
+		Ip and/or port fall into the "REJECT" rule
+		Traffic is bounced - will receive a response "access denied', "improper resources" -> MESSAGE MAY GIVE AWAY THE TYPE OF SYSTEM
+		Optional audit information is logged
+		
+		PRO: CLIENT IS NOTIFIED IMMEDIATELY, NO ANY FURTHER ATTEMPTS DUE TO THE TIMEOUT WOULD BE DONE
+		CON - THE PRESENSE OF A FIREWALL IS EXPLICITLY DISCLOSED -> HACKERS KNOW THERE IS A FIREWALL 
+			IN CASE OF DDoS ATTACK, YOU WILL HAVE TO REPLY TO EVERY ATTACK, WHICH WOULD MAKE DDoS ATTACK SUCCESSFUL
+	
+	DROP (in action)
+		IP and/or port fall into "DROP" rule
+		All packets are dropged - like a timeout - NO MESSAGE
+		Optional audit information is logged
+		
+		PRO: IMPOSSIBLE TO GUESS OR DETERMINE THE PRESENSE/TYPE OF THE FIREWALL; NO RESOURCES INVOLVED TO REPLY
+		CON: RISK OF MULTIPLE CONNECTION ATTEMPTS BY SOME AUTOMATED APPLICATIONS TREATING TIMEOUTS AS POTENTIALLY TEMPORARY FISABLE ISSUE
+	
+	EXAMPLE
+		IF TRAFFIC COMES FROM IP 192.168.2.162 PORT 22 THEN ACCEPT
+		IF TRAFFIC COMES FROM IP 192.168.3.172 PORT (80 PR 443), THEN ACCEPT
+		IF TRAFFIC COMES FROM IP 10.20.0.0/16 THEN REJECT
+		RULE BY DEFAULT (ALL TRAFFIC NOT INCLUDED IN RULES ABOVE) DROPPED
+		
+		IF I CONNECT FROM 192.168.2.180:80 DROPPED
+		IF I CONNECT FROM 192.168.3.178:443 ACCEPTED
+		IF I CONNECT FROM 10.20.21.21 REJECTED
+		IF I CONNECT FROM 192.168.3.172:21 DROPPED
+		
+	EXAMPLE -> BAD	
+		IF TRAFFIC COMES FROM IP 192.168.2.162 PORT 22 THEN ACCEPT
+		IF TRAFFIC COMES FROM IP 192.168.3.172 PORT (80 OR 443), THEN ACCEPT
+		IF TRAFFIC COMES FROM IP 10.20.0.0/16 THEN REJECT
+		RULE BY DEFAULT (ALL TRAFFIC NOT INCLUDED IN RULES ABOVE) THEN ACCEPT
+		
+		IF I CONNECT FROM 192.168.2.180:80 ACCEPTED
+		IF I CONNECT FROM 170.170.179.179 ACCEPTED
+		IF I CONNECT FROM 10.20.21.21 REJECTED
+		IF I CONNECT FROM 192.168.3.172:21 ACCEPTED
+		
+	***GOLDEN RULE OF FIREWALLS***
+	DEFAULT IS TOTAL LOCK OF THE MACHINE -> DROP
+	**********************************************
+	
+	PROCESS: firewalld
+	Config /etc/firewalld/firewalld.configuration
+	
+	xml files: not particularly useful
+	but can have public and private zones
+	/etc/firewalld/zones/*
+
+	command: firewall-cmd
+	
+	/etc/firewalld/zones/
+	
+	CentOS Firewalld process will be UP; Port 22 (i.e., ssh) will be the only one authorized to connect from the outside
+	All other ports should be closed, unless 80 for a website
+	
+	
+	Firewalld has multiple commands and options allowing to administer it
+	Firewalld works by zones
+	Firewalld can also be configured per network interface
+	
+	BEST WAY to configure is to do a fine-grained configuration manually using "rich rules"
+	
+	-block
+	-dmz - demilitarized zone - like public 
+	-drop
+	-external
+	-home
+	-internal
+	-public 
+	-trusted
+	-work
+	
+	one zone is chosen - cannot use two at the same time
+	CentOS - default rule is public, so all traffic is allowed through port 22
+	
+	for each zone (xxx), default configuration
+	/usr/lib/firewalld/zones/xxx.xml
+	
+	custom files can be created as needed to ovverride
+	/etc/firewalld/zones/xxx.xml
+	
+	edit the file /etc/firewalld/zones/
+	
+	STEP !
+	edit /etc/firewalld/firewalld.conf 
+	replace
+	DefaultZone=public
+	with
+	DefaultZone=drop
+	
+	STEP 2
+	/etc/firewalld/zones/drop.xml
+	
+	<?sml version="1.0 encoding="utf-9"?>
+	<zone>
+		<short>Drop</short>
+		<rule family="ipv4">
+			<source address=[ip address]" /> -> limits to your ip address only
+			<service name="ssh" /> can replaced by <service port="22" />
+			<accept />
+		</rule>
+	</zone>
+	
+	in above file, only own machine will access, everything else will be dropped
+	
+	STEP 3
+	systemctl restart firewalld
+	
+	STEP 4 - make sure that firewalld starts on reboot
+	systemctl enable firewalld - will be locked out
+	
+	systemctl disable firewalld - will not be locked out
+	
+	
+	<rule family="ipv4">
+		<source address="192.168.206.0/24" />
+		<accept />
+	</rule>
+	<rule family="ipv4">  -> only accepts through https
+		<source address="0.0.0.0/0" />
+		<service name="https" />
+		<accept />
+	</rule>
+	<rule family="ipv4">
+		<source address="170.25.0.0/16" />
+		<service name="samba"
+		<accept />
+	</rule>
+	<rule family="ipv4">
+		<source address="170.25.0.0/16" />
+		<service name="ssh"
+		<accept />
+	</rule>
+	
+	else default drop
+	
+	firewalld activity
+	/var/log/firewalld
+	++++++++++++++++++++++++++
+	
+	Ubuntu
+	iptables* syntax
+	
+	ufw status
+	Status: inactive
+	
+	installed by default firewall is inactive
+	
+	Step 1
+	ufw allow from [your IP] to any port 22
+	if we omit "from IP":
+	ufx allow to any port 22 -> the SSH access would be granted to everybody -> BAD
+	
+	Step 2
+	ufw default deny incoming -> drop
+	
+	Step 3
+	ufw enable -> if  you made a mistake on your ip address, it will lock you out
+	
+	Step 4
+	systemctrl enable ufw -> only when everything is working will restart after reboot
+	
+	command: ufw status
+	
+	Status: active
+		22/tcp			ALLOW	Anywhere - Rule 1 
+		22				ALLOW	[ip adddress] - Rule 2 
+		22/tcp {v6}		ALLOW	Anywhere (v6) - Rule 3
+	
+	command: ufw delete 1 
+	
+	command: ufw status
+	
+	Status: active
+		22				ALLOW	[ip adddress] - Rule 2 
+		22/tcp {v6}		ALLOW	Anywhere (v6) - Rule 3
+	
+	command: ufx delete 2 
+	
+	command: ufw status
+	
+	Status: active
+		22				ALLOW	[ip adddress] - Rule 2 
+		
+	Step 5 
+	command: ufw reload
+	
+	
+	
+	47.201.173.132
+	
+	
+	
+	
+	

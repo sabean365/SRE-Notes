@@ -1,0 +1,85 @@
+
+
+BASH
+
+can use env variables, read or change their values
+
+
+Bash Scripting
+separate commands by semicolons
+
+must always specify the shell you are using, such as ->
+#!/user/bin/bash
+
+echo "Hello World"
+
+echo ${PATH}
+
+#!/usr/bin/bash
+Var1=4
+Var2=4
+if [ "${Var1}" == "${Var2}" ]
+then
+  echo "Var1 and Var2 are equal"
+else
+  echo "Var1 and Var2 are NOT equal"
+fi
+
+
+#!/usr/bin/bash
+x=1
+while [ "${x}" < 5 ]
+do
+  echo "Current x=${x}"
+  x=$(( ${x} + 1 ))
+done
+
+
+FUNCTIONS
+
+1. A function is a reusable portion of code that can be called one or multiple times from the "main" code.
+
+2. Functions can have input parameters.
+
+3. Functions can have return values.
+
+
+#!/usr/bin/bash
+f_do_something()
+   echo {"I am a function!"}
+
+f_do_something()
+
+
+#!/usr/bin/bash
+outside_var=5
+f_some_stuff()
+  {
+   echo "Outside Variable inside the function = ${outside_var}"
+   inside_variable=6
+   echo "Inside Variable inside the function = ${inside_variable}"
+  }
+f_some_stuff
+echo "Inside Variable outside of the function = ${inside_variable}"
+
+
+#!/usr/bin/bash
+num1_out=$6
+num2_out=$5
+num3_out=$3
+
+f_average() {
+num1=$7
+num2=$9
+num3=$3
+sum=$(($num1 + $num2 + $num3))
+average=$(($sum/3))
+
+return ${average}
+}
+echo ${average}
+
+f_average ${num1_out} ${num2_out} ${num3_out} 
+echo "Function f_average returned the value $?"
+
+

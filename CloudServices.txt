@@ -1,0 +1,127 @@
+
+
+CLOUD - AZURE
+	THE 2ND LARGEST PUBLIC CLOUD
+	THE HIGHEST GROWTH RATE
+	THE MOST REGIONS
+	THE MOST POPULAR IN ENTERPRISES
+	
+=> TO BUILD ENTERPRISE APPLICATION
+	
+CLOUD - Virtual Machines -> Hypervisor based virtualization 
+	(Google - "Instance")
+	(AWS - "EC2")
+
+Introduction to the CLOUD
+	Web Application -> Hardware, Software, Networking Component <== pre-cloud
+	On demand delivery of IT resources/services via Internet with pay-as-you-go pricing
+	
+	USER MANAGEMENT -> ALWAYS GO WITH THE LEAST PRIVELEGED CHOICES
+	
+COMPANIES WHO OFFER CLOUD 
+	companies who build huge data centers
+	fill it with servers, networking, cooling, electricity, etc
+		services: AI, IoT, Kubernetes, etc 
+	design and install variations
+	publicly accessed (PRIVATE WOULD BE ONLY ACCESSED AT ON-SITE SERVER)
+	
+If you need a server IN THE CLOUD ERA:
+	Create it in the cloud within minutes
+	Use it as you wish
+	Pay for what you use
+	Shut it down when not needed
+	Automatically maintained, patched, secured, monitored -> service provider is responsible
+	
+5 Characteristics of Cloud Computing
+	On-Demand Self Service  -> whenever you want you can use it
+		-> no human interaction is needed for resource provisioning
+		-> resource can be provisioned with a click of the button
+		-> provisioning is available 24/7
+	
+	Broad Network Access -> network at a different level than private that you can use
+		-> resouces can be accessed from anywhere using the network
+		-> ideally high broadband
+		-> no physical access is required at any time
+		
+	Resource Pooling ->available to you
+		-> pysical resources are shared between customers -> customers have no idea who else is using the resources 
+		-> the cloud's backbone decides which physical resource to allocate for a customer's virtual services
+		-> Some advanced cloud services allow for physical resource separation -> governmnet might want a dedicated data center
+		
+	Rapid Elasticity  -> ability of the system to scale
+		-> resources can be scaled up and down as needed, automatically
+		-> no need to purchase resources for a one-time peak scenario
+		
+	Measured Service -> cost based 
+		-> payment is done only for resources actually used
+		-> server time / DB storage / Function calls etc
+		-> measurement usually done in high-resolution
+			->server time by the second
+		-> no need to invest money in non-used resources 
+		
+	CapEx - traditional IT	OpEx
+	Capital Expense			Operating Expense
+	upfront investment		Pay for operation
+	for future use/profit
+	
+	build data center		Electricity
+	purchase server			Salaries
+	purchase A/C			Maintenance
+	purchase software
+	purchase licenses
+	hire staff
+	
+	Cloud OpEx -> if properly configured and used
+	Extremely flexible
+	Optimal utilization
+	
+	5 Major Components Associated with a Cloud Server:
+		1. cpu -> 4 vcpu
+		2. RAM -> 16 GB ram
+		3. storage -> hard disk -> 32 GB
+		4. OS -> Linux -> image
+		5. network -> nic
+	
+	Cloud Service Types
+	1. IaaS - infrastructure as a service -> VMs
+		-> networking, storage, servers, virtualization all managed by service
+			cloud provides the host machine, networking and disks
+		-> OS, middleware, runtime, data, applications run by you
+		
+		CON: level of control is a consideration for a developer -> only want to be responsible for data and applications
+	
+	2. PaaS - Platform as a service -> Web Apps
+		-> networking, storiage, servers, virtualization, OS, midlewar, runtime managed by service
+		-> data, applications are your responsibility
+		-> the cloud provides the runtime for running web apps
+			-> you, the client, upload the code, and it just runs
+			-> you, the client, have no access to the underlying virtual machines
+		-> serverless possibility
+		
+		CON: less control, higher cost 
+	
+	3. SaaS - Software as a service - completely managed by the service -> no control
+		-> Google
+		-> Zoom
+		-> Office 365
+		
+		CON: no control, high cost
+	
+	4. AIaaS - AI as a service 
+	5. DBaaS - database as a service
+	6. DaaS - Desktop as a service
+	7. IoTaaS - Internet of Things as a Service
+	
+TYPES OF CLOUDS
+	1. Public -> all resources/services public -> isolated by cloud service - e-commerce clients -> clients have no access to underlying infrastructure
+	
+	2. Private -> all dedicated to one company -> healthcare, u.s. govt -> accessible only in the organization's network -> subset of cloud resourses
+	
+	3. Hybrid -> somee private, some public -> banking would be private, marketing would be public -> workloads separated between the two clouds
+		data segregation: sensitive data in the organization's premises, public data in the public cloud
+		
+	4. Multi-cloud -> Azure and AWS
+		
+	Delivery is the way the services are being delivered to the customer; deployment is the way these resources are being depoloyed.
+
+	

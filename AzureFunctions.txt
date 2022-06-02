@@ -1,0 +1,88 @@
+
+
+Azure Functions
+	Serverless - event-driven architecture (EDA)
+	Reactive
+	Event is triggered -> Azure function -> an event-driven code will run
+	
+	
+Where do we use this?	
+	Google Drive
+	1. upload media -> triggers an event -> code -> antivirus scanning -> validation of data -> store it in the underlyging system
+	2. upload media -> trigger an event -> compress the media file
+	
+	If you do this on VM/app service, it always has to be running
+	Serverless only activates during an event trigger -> only charged for event time
+	
+	==> No control over the underlying system and services
+	
+	Analytics
+	uploaded a file -> trigger an event -> do analytics -> store device -> data -> trigger code to present another data choice or refine data into UI/UX
+	
+	Web App
+	Request for the app -> trigger an event -> code will execute -> trigger other events
+
+
+Azure Functions Definition	
+	*Small, focused, functions running as a reult of an event
+	*EDAs
+	*Automatically managed by Azure
+	*Start/stop/delete
+	*Flexible pricing
+	*Managed by cloud
+	
+	
+	
+	HTTP trigger
+	->A function that will be run whenever it receives an HTTP request, responding based on data in the body or query string
+	
+	Timer trigger
+	->A function that will be run on a specified schedule
+	
+	Azure Queue Storage trigger
+	->A function that will be run whenever a message is added to a specified Azure Storage queue
+	
+	Azure Service Bus Queue trigger
+	->A function that will be run whenever a message is added to a specified Service Bus queue
+	
+	Azure Service Bus Topic trigger
+	->A function that will be run whenever a message is added to the specified Service Bus topic
+	
+	Azure Blob Storage trigger
+	->A function that will be run whenever a blob is added to a specified container
+	
+	Azure Event Hub trigger
+	->A function that will be run whenever an event hub receives a new event
+	
+	Azure Cosmos DB trigger
+	->A function that will be run whenever documents change in a document collection
+	
+	IoT Hub (Event Hub)
+	->A function that will be run whenever an IoT Hub receives a new event from IoT Hub (Event Hub)
+	
+	SendGrid
+	->A function that sends a confirmation e-mail when a new item is added to a particular queue
+	
+	Azure Event Grid trigger
+	->A function that will be run whenever an event grid receives a new event
+	
+	Durable Functions Entity HTTP starter
+	A function that will trigger whenever it receives an HTTP request to execute an orchestrator function.
+	Durable Functions HTTP starter
+	A function that will trigger whenever it receives an HTTP request to execute an orchestrator function.
+	Durable Functions activity
+	A function that will be run whenever an Activity is called by an orchestrator function.
+	Durable Functions entity (class)
+	A C# entity that stores state and represented by a class.
+	Durable Functions entity (function)
+	A C# entity that stores state and represented by a function.
+	Durable Functions orchestrator
+	An orchestrator function that invokes activity functions in a sequence.
+	Kafka output
+	A function that will send messages to a specified Kafka topic
+	Kafka trigger
+	A function that will be run whenever a message is added to a specified Kafka topic
+	RabbitMQ trigger
+	A function that will be run whenever a message is added to a specified RabbitMQ queue
+	SignalR negotiate HTTP trigger
+	An HTTP triggered function that SignalR clients will call to begin connection negotiation

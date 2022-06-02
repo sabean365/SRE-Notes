@@ -1,0 +1,24 @@
+What is SNI (Server Name Indication)?
+
+Many web servers are more like apartment buildings than houses: 
+They host several domain names, and so the IP address alone is not enough to indicate which domain a user is trying to reach. 
+This can result in the server showing the wrong SSL certificate, which prevents or terminates an HTTPS connection 
+– just like a package can't be delivered to an address if the correct person doesn't sign for it.
+
+PROBLEM:
+When multiple websites are hosted on one server and share a single IP address, 
+each website has its own SSL certificate, 
+so the server may not know which SSL certificate to show when a client device tries to securely connect to one of the websites. 
+This is because the SSL/TLS handshake occurs before the client device indicates over HTTP which website it's connecting to.
+
+SOLUTION:
+Server Name Indication (SNI) is designed to solve this problem. 
+SNI is an extension for the TLS protocol (formerly known as the SSL protocol), which is used in HTTPS. 
+It's included in the TLS/SSL handshake process in order to ensure that client devices are able to see the 
+correct SSL certificate for the website they are trying to reach. 
+
+The extension makes it possible to specify the hostname, or domain name, of the website during the TLS handshake, 
+instead of when the HTTP connection opens after the handshake.
+
+SNI adds the domain name to the TLS handshake process, so that the TLS process reaches the right domain name 
+and receives the correct SSL certificate, enabling the rest of the TLS handshake to proceed as normal.

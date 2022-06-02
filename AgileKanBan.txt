@@ -1,0 +1,154 @@
+
+KanBan - Faster than Scrum - as needed
+
+Object that controls the flow of production.
+Producing only what is required just in time so that no materials or energy are wasted.
+
+EX: Point of Sale, Delivery Orders, Fast Food
+
+Agile method to help manage continuous queue of work items based on teams capacity. -WORKS WELL IN MAINTENANCE OF A PRODUCT
+Considered a JIT delivery method for managing and improving service delivery in a gradual, evolutionary manner.
+
+Visualization of Stages - Workflow:
+Stories -> To Do -> In Progress -> Testing -> Done
+Every stage has a work in progress limit - number can be adjusted as needed
+
+****KANBAN FRAMEWORK****
+
+**Visualize work and workflow it follows
+By creating a visual model of your work, you can observe the flow of work moving through your Kanban system.  
+Making the work visible--along with blockers, bottlenecks, and queues--instantly leads to increased communication and collaboration.
+
+**Limit the Work in Progress
+By limiting how much unfinished work is in process, you can reduce the time it takes an item to travel through the Kanban system.
+You can also avoid problems caused by task switching and reduce the need to constantly reprioritize items.
+
+**Remove bottlenecks to improve flow of the work
+Enables to see the whole picture.
+Emphasis is on removing the root cause of an issue.
+
+**Explicit exit policies (done)
+Provide transparent policies so all roles understand when a story can be marked as ready to be pulled
+
+**Optimize Flow
+By using the visual board, WIP limits and exit policies, you can optimize the Kanban workflow to improve the smooth flow of work,
+collect metrics flow, and obtain leading indicators of future problems.
+
+**Improve Collaboratively Using Scientific Method
+Once your Kanban system is in place, it becomes the cornerstone for a culture of continuous improvement.
+Teams measure their effectiveness by tracking flow, quality, throughput, lead times, and more.
+Experiments and analysis can change the system to improve the team's effectiveness
+
+**Pull rather than push (empowered team and steady pace)
+
+Why Kanban? BEST IN MAINTENANCE STAGE WHERE THERE IS CONTINUOUS FLOW
+Simple and efficient
+Faster approach to migrate to agile practices, allows further improvements
+No new heavy processes, roles, events
+Best approach if the work is service oriented - especially in support and maintenance type of development
+Multi-teams and multiple projcts can use Kanban
+
+Why Limit WIP - work in progress
+achieved by specifying minimum and maximum number of issues at certain stage/column of Kanban board
+
+**Better flow	
+	Improved productivity
+	Faster and continuous delivery
+	Any bottlenecks in the process/workflow are clearly bisible
+	
+**Limits Waste
+	Work piling up in a particular stage delays delivery
+	Limits the defects passing to the next stage thereby rework
+	
+**Promotes team collaboration as team focuses to clear the piled up issues first before grabbing new issues to work on.
+
+Kanban Metrics
+	Cumulative Flow Diagram
+	Done, In progress, Selected for Development, Backlog
+	
+Agile Values
+	Coninuous Learning & Improvement
+	Lightweight & Simple
+	Prioritization & Adaptation
+	Empowered Team
+	Active Customer
+	Iterative-Incremental (Sprints)
+	Cost Saver (Early fixes)
+	Transparency Communication (Live & Early accessibility reports)
+	
+	
+-----------------------------
+Other Agile Frameworks
+-----------------------------
+
+SAFe
+Scale Agile Framework - AGile at Scale
+
+Agile is beyond scrum and development
+
+A system for scaling agile across teams of teams, business units, and even entire organizations
+
+Provides specific guidance for scaling Agile in large, complex, distributed or high compliance settings without compromising agile principles
+
+- 7 Core Principles of LEAN SAFe - 
+Lean-Agile Leadership.
+Team and Technical Agility.
+Agile Product Delivery.
+Enterprise Solution Delivery.
+Lean Portfolio Management.
+Organizational Agility.
+Continuous Learning Culture.
+
+XP - agile frameworks regarding appropriate engineering practices for software development
+Focus is on high code quality and maximum automation
+Smaller iterations (1 to 2 weeks)
+Can adapt to requirement change
+
+Important concepts
+	Small releases
+	Simple design
+	Test-driven development
+	Refactoring
+	Pair Programming
+	Collective Ownership
+	Continuous Integraction
+	
+Lean
+	set of principles and leadership mindset
+	maximize customer value while minimizing wasted
+	
+DSDM
+	Function-driven development (FDD)
+	Time & Budget Control
+	delivering the project goals on time and within budget
+	
+	Our highest priority is to satisfy the custome rthrough early and continuous delivery of software.
+	
+	Product Delivery 
+	Continuous Delivery Pipeline
+		Continous Exploration, Continuous Integration, and Continuous Deployment -> Release on Demand
+		
+DevOps is a collaboration between Development and IT Operations to make software production and deploymnet in an automated and repeatable way.
+
+Development - Teamwork and Innovation
+ +
+Ops  - Automation and Collaboration
+
+Faster and quality
+
+Improvement
+	Continuously speed up the improvemnet of product - automate everything
+System Thinking
+	Makes the bigger picture clearer by enabling transparency and collaboration among the team
+Time to market reduced the time to market by 50%
+Collaboration- 
+	Enables collaboration among functional teams
+Quality
+	Helps in reduction of defects actoss lifecyle - improves resiliency
+	
+
+
+
+
+
+

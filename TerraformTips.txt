@@ -1,0 +1,24 @@
+
+Terraform Tips
+
+Modules vs Modularization
+When using modules or developing modules, we use a single file main.tf, outputs.tf, variables.tf etc.
+but outside of modules, like we're working now, use modularization-- otherwise it'll be very difficult to spot errors and fix them in a huuuuggggeeee file
+
+NAT
+-> NAT gateway provides outbound internet connectivity for one or more subnets of a virtual network. 
+-> Once NAT gateway is associated to a subnet, NAT provides source network address translation (SNAT) for that subnet. 
+-> NAT gateway specifies which static IP addresses virtual machines use when creating outbound flows.
+
+Active Directory
+https://learn.hashicorp.com/tutorials/terraform/azure-ad?in=terraform/azure
+"94a65dd9-0c6d-4076-8482-4842bedf48b5"
+
+
+Virtual Machine Scale Sets (VMSS): lets you create and manage a group of load balanced VMs. The number of VM instances can automatically increase or decrease in response to demand or a defined schedule.
+Terraform:  open-source infrastructure as code software tool that provides a consistent CLI workflow to manage hundreds of cloud services.
+Azure DevOps (ADO):  tools and services like for example Repos, Pipelines, Boards and others that help teams to collaborate, develop, build and test.
+Azure Pipeline Agents:  used to build your code, execute scripts or deploy your software. An agent is computing infrastructure using Windows, MacOS or Linux with installed agent software that runs one job at a time.
+
+
+YouTube.com/PsyberMind - There isn't much on there

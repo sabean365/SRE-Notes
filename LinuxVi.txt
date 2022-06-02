@@ -1,0 +1,69 @@
+
+	
+VI EDITOR:
+open file in normal mode (also creates a text file)
+vi [file]
+
+open file in read-only mode:
+vi -R [file]
+
+
+i -> insert
+
+:w -> save without exiting
+
+save and exit:
+:wq -> write, quit
+:x
+ZZ
+
+:q! exit without saving
+
+more [filename] -> print the contents of the file
+echo $VAR will print variable value
+
+in text editor outside of insert mode, type /[string] or /[number] and you can find
+to GLOBALLY replace: 
+	:1,$s/[char]/[replaceChar]/g
+	
+vi -d file_name1 file_name2 -> shows the difference in code
+
+vi -y file_name
+	like in a notepad++ 
+	to exit [ctrl] L
+	
+:1 position at begining of file\
+
+G position at the end of the file
+
+:N position at the line #N of the file
+
+M| position at the #M's character of the current line
+
+/[string_to_search]
+
+?[string_to_search]
+
+n -> to look for the next one
+N -> to look for the previous one
+
+r + new-character
+
+gUU - put the current line in uppercase
+
+guu - put the current line in lowercase
+
+v - character by character (with arrows)
+V - line by line (with arrows)
+
+y - to copy
+d - to cut
+
+p - paste just before the cursor
+P - paste just after the cursor
+
+if your vi is corrupted, vi will notify you about a corrupted file
+
+.myfile.txt.swp is the recovery swap file will remain on the disk and will allow to recover or merge the contents where it was left off
+
+[O]pen read only, [E]dit anyway, [R]ecover, [D]elete it, [Q]uit, [A]bort

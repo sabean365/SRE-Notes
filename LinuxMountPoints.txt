@@ -1,0 +1,137 @@
+
+Mountpoints
+	/			disk 1
+	home
+	opt
+	tmp
+	usr
+	var
+	...
+	
+	by default ^^^
+	
+	directories are called mountpoints
+	
+	display mountpoints: df -h 
+	
+	command to show all memory: free
+
+Challenge: need to add a new disk to the server: add mountpoint  /toto on disk 2, format and configure
+	1. Create dir 
+		mkdir /toto
+		ls -l / | grep toto
+	2. lsblk -> will show all hard disks or usb hard drives
+		will confirm that there is additional space
+	3. fdisk /dev/sdc (sdc is new disk)
+		to see suggestions command: m
+		command: n 
+		select (default p): <enter>
+		using default response p
+		Partition number (1-4, default 1):
+		First sector (2048-20971519, default 2048): <enter>
+		command: w 
+		the partition table has been altered!
+		Calling ioctl() to re-read partition table.
+		Syncing disks.
+	4. lsblk -> will show a partition like
+		sdc1 8:33 0 10G 0 part 
+	5. still need to format the partition - cannot do all in one because partitions may have different formats
+	6. format for linux: from root -> mkfs.xfs /dev/sdc1 -> overwrites data
+		mkfs = make file system -> xfs format 
+	7. check for fomatting: blkid
+		/dev/sdc1: UUID="a9dghoi@jto780980-9mvde"
+		UUID (universally unique id): uniqulely identifies any formatted particion
+	8. Declare the new mountpoint in /etc/fstab -> special file
+		copy UUID into this file and type: /toto xfs defaults 0 0
+	9. 	mount -a -> command will mount all declared filesystems, including the new one
+	10. df -h -> will show the disks and directories that are used on them
+	
+To remove existing mountpoint:
+	umount /dev/sdc1
+	-> remove filesystem declaration from /etc/fstab file
+	-> destroy partition - not completely -> FBI and NSA can find it
+	-> remove the disk from the machine
+	command: umount /toto
+	df -h -> cannot be seen anymore 
+	/etc/fstab -> will not be in this file -> SUPER IMPORTANT FILE
+	when machines are down -> all files are unmounted anyway
+	
+	VERY DANGEROUS 
+	fdisk /dev/sdc
+	command: d -> deletes the file
+	command: w -> partition table has been altered
+	
+	pwd -> print working directories
+	
+chown -R [username]. /toto -> recursively changes ownership
+
+Logical Volumes allow to create and store filesystems/mountpoints on multiple disks, in order to not be limited in size
+-> only need to add disk space
+-> no need to unmount, reboot the server -> makes it a very powerful and useful tool
+
+EVERYTHING should be done through LOGICAL VOLUMES
+	
+Challenge: Creation of 2 volumes LVM mountpoint
+	1. Precreate the directory in which the mountpoint will need to be mounted  
+		mkdir /toto/LVM
+		df -h . -> shows where you are now
+	2. Ensure that new non-formatted disks are visible on teh machine
+	3. Create a special LVM partition on the first of the attached empty disks
+		fdisk /dev/sdc 
+		command: n
+		command: t
+		selected partition: 1
+		Hex code or alias: 8e
+		"Changed type of partition 'Linux' to 'Linux LVM'"
+		Command: w -> write
+		lsblk will show partitions
+	4. Create a Logical Volume from this new LVM partition
+		pvcreate /dev/sdc1 -> creates physical volume "Physical volume successfully created"
+		vgpool /dev/sdc1 -> creates Volume group "Volume group successfully created"
+		lvcreate -1 +100%FREE -n lvvolume vgpool -> creates logical volume
+		lsblk shows partition and volume group and volume -> can see the vgpool-lvvolume
+	5. Format the Logical Volume
+		mkfs.xfs /dev/vgpool/lvvolume
+		blkid will show UUID of /dev/sdc1:
+		/dev/mapper/vgpool-lvvolume UUID=" " BLOCK SIZE='512' TYPE='xfs'
+		copy UUID from mapper string
+	6. Declare the new mountpoint in /ect/fstab file
+		add line with UUID /dir_LVM sfx defaults 0 0
+	7. Execute mount -a command to mount the filesystem into the mountpoint
+		mounts first logical volume 
+	8. Add LVM parition on the second disk - sdd
+		fdisk /dev/sdd
+		command: n
+		command: t 
+		command: 8e
+		command: w 
+	9. Extend the mountpoint to 2 disks.
+		vgextend vgpool /dev/sdd1
+		lvextend -1 +100%FREE /dev/vgpool/lvvolume
+		xfs_growfs /dev/vgpool/lvvolume
+		
+Remove LVM mountpoint 
+	1. use umount /filename
+	2. remove filesystem declaration from /etc/fstab 
+	3. mount -a9dghoi@jto780980-9mvde
+	4. destroy LVM
+		lvremove /dev/vgpool/lvvolume
+		will prompt y/n
+	5. to completely destroy
+		fdisk /dev/sdc 
+		command: d
+		command: w 
+		
+Why does identity management matter?
+	1. centralized
+	2. security
+	3. groups can order the access for a certain departmnet that needs access 
+	4. subscriptions
+	5. resources
+	
+AIM Access and Identity Management
+	1. RBAC - roll based access control
+	2. only give access to the person who's identity is part of a group that needs 
+	
+Budge with alerts
+	

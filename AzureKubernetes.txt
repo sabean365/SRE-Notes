@@ -1,0 +1,26 @@
+
+Azure Kubernetes Service
+
+	Managed Kubernetes on Azure
+	Allows deploying containers and managing them using Kubernetes on Azure
+	
+	Traditional Deploymnet
+	-> Code was copied and built ont the production server
+	-> Code worked on local but not on production
+	
+	==> STANDARDIZATION: CONTAINERS <==
+	
+	-> Thin packaging model - new type of VM
+	-> Packages software, its dependencies and configuration files
+	-> Can be copied between machines
+	-> Uses the underlying OS
+	
+	
+	Containers vs VM
+	 
+	Containers are more portable
+	Containers do not have OS
+	Container is everything above the operating system
+	
+	
+	

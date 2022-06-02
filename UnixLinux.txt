@@ -1,0 +1,259 @@
+
+
+LINUX
+	Ken Thompson - 1967 -> Multics (Mainframe)
+	+
+	Denis Ritchie - 1969 -> B Language
+	
+	First Unix (Assembler) 1970 - start of unix epoch
+	
+	Denis Ritchie -> C Language - 1972
+	
+	Unix (C Language) -> 1973
+	
+	Linus Torvalds - August 25, 1991 first edition of the new kernel is officially announced -> FreaX
+	-> goal to effectively use Intel 80386 and further processors
+	
+	Ari Lemmke - in Helsinki University Server FTP - called it Linux
+	
+	TUX - Torvalds UniX - linux logo 1996
+	
+	August 25, 2021: Linux turned 30
+	
+	3 Main Distributions -> 95% capatible with each other
+		1. Slackware 1993 -> 49 directly derived distributions
+			1994 SuSE
+		2. Debian 1993 -> 95 directly derived distributions
+			2004 Ubuntu - 69+ derived distributions since!
+		3. RedHat 1994 -> 55 directly derived distributions
+			1998 Mandrake
+			2003 Fedora
+			2003 CentOS -> companies use this because of support
+			
+	Linux is for server needs
+	
+	Connection - many clients to one server connection
+		Preferred way SSH -> only way to send info to server
+		Windows does not support SSH -> use Putty or similar software
+		Linus - > Linux -> native SSH support -> direct SSH
+		MacOS ->Linux: native SSH support -> direct SSH
+		
+		PuTTY (TTY -> TeleTYpewriter, in telecom a device allowing to send messages through a phone line) -> PuTTY server GUI -> Login prompt
+		
+		$ ssh myusername@remotehost = ssh connection as "m"
+		
+		/ directory levels
+		/ - "root"
+		/[name] a directory or a mountpoint
+		/home   home directories by default - separated by username
+		/lib, /lib64 system libraries
+		/proc active processes
+		
+	Windows commands
+		create directory  md newdir
+		delete an empty dir  rd newdir
+		delete a non-emptry dir rd /S newdir
+		change directory dc newdir
+		change back to the parent dir cd.. OR cd ..
+		
+	File permissions
+		read permission: id by attribute r - read
+		write permission: id by attribute w - modify
+		execute permission: id by attribute x - run
+		
+		-> User(owner of a given file or directory)
+		-> main group the user belongs to
+		-> Others(everyone else on a given Linux server)
+		
+		as a result, there is a total of 9 permissions setting, presented as a sequence of 9 bytes
+		permissions are of vital importance in terms of security -> correct: truly unbreakable fortress
+		rwx   	rwx   	rwx
+		user  	group 	others
+		
+		example: rwxr-xr--
+			user has all 
+			group has read and execute 
+			others have read only
+			
+		file permissions for directories have 10 digits - directories are highly protected in this way:
+			drwxr-xr--
+			
+			with a directory:
+			others - know it exists (read only), but do not know what is inside it
+			group - know it exists and know what's inside dir (read and see what's inside, but cannot change, rename, move, delete)
+			
+		READ PERMISSIons
+			open in R/O mode
+			display list of files/directories
+		WRITE PERMISSIons
+			Files; Edit/Change?Rename/Delete
+			Create files in directory / Create / Rename / Delete
+		EXECUTE PERMISSIONS
+			use ch command
+			
+		File Permissions command chmod
+			changes mod (permissions)
+			
+			only file/directory owner can change permissions
+			to add permissions the chmod command is used with a "+"
+			to remove permissions, the chmod command is used with a "-"
+			
+			chmod u+r
+			chmod g+rx
+			chmod o-rwx
+			
+		Bit-numeric representation
+			[userperms][groupperms][otherperms]
+			
+			rwxrwxrwx - 777
+			rwxr-xr-x  - 755
+			rw-rw-r-- - 664
+			rwxr-x-- - 750
+			
+			chmod 755 add user all, group and others r,x
+			chmod 640 add user r/w, group read, and nothing to others
+			chmod 777 add all permissions for everyone ->USE WITH CAUTION!
+			
+		File permissions - sticky bit - does not advocate sticky bit
+			introduced in 1974 (Unix) rwt
+			chmod +t dir/ -> prevent from modifying -> only owners can modify their owner
+			chmod -t dir/ -> directory becomes normal according to permissions
+			
+		File Permissions - umask
+			default chmod - umask = resulting chmod 
+			default chmod subtracts certain permissions -> 
+			for files 666 - 022 = 644 -> rw-r--r--
+			for directories 777 - 022 -> drwxr-xr-x
+			
+			7: rwx
+			6: rw-
+			5: r-x
+			4: r--
+		
+		++Virtual machine for me++
+		stu2022 / spr1ng2022$
+		139.177.197.157
+		
+	Root user
+		Root user is the first userid it is the equivalent of Admin - but superuser
+		Root has all the rights, even on files with disabled permissions
+		Unlike any other users, root also has permissions to manage the server resources:
+			add or remove filesystems, perform restarts of all services or of the server itself
+		Root has permissions to manage other server's users.
+		Root has permissions to manage the software (updates, patches, etc)
+		
+	Direct connections to the server as root are usually blocked - cannot access from internet
+	if an unattended user gets access to the root user credential, this person gails access to the whole server, ad potentially a portion of the network runds it
+	
+	
+	pwd is "print working directory"
+	
+	CentOS /etc/bashrc
+	Ubuntu /etc/pam.d/common-session: session optional pam_umask.so [umask=...]
+	
+	passwd [options] [username] must have current passwd for security purposes
+	Daisy@home365
+	
+	
+	superuser (root) default prompt is a #
+		passwd otherusername - do not need to know otherusername password
+	reg user default prompt is a $
+	
+	
+	root /etc/passwd
+		toto01:x:1002:  1002:  :/home/toto01  :/bin/bash
+		uname   userid  grpid  home dir       default shell
+		
+USER MANAGEMENT		
+users are auto-incremented
+	
+	create user -> useradd
+	UID and GID numbering is given by the numberic sequence given in /etc/login.defs
+	home directory /etc/default/useradd 
+		ubuntu: /etc/adduser.conf.
+	permissions (chmod) of home direct are /etc/login.defs - 700 (only rights to root) 
+		ubuntu: /etc/login.defs - 750
+		
+USER MANAGEMENT file /etc/shadow
+	VERY SECURED text file that stores information about user passworda nd their validity in the following format:
+	
+	username:password:last_update:min_age:max_age:grace:inactive:expiration
+	
+	username:		username
+	password:		encrypted pword
+	last_update:	number of days since unix epoch when the passwork was changed last time
+	min_age:		minimum number of days before the pword can be changed
+	max_age:		maximum number of days pword remains valid
+	grace:			grace period of days, during which, an expired pword can still be reset
+	expiration:		number of days in unix epoch when pword will expired
+	
+	HOW DOES UNIX KNOW PASSWORD? ENCRYPT AND COMPARE ENCRYPTED PWORD IN DB
+	PWRDS TO are more encrypted than root or username password 
+	bin:
+	adm:
+	sshd:
+	
+	min_age: 15 days - cannot change in between 15 days
+	max_age: 126 days 
+	grace: 7 days
+	expiration: 19016 - entire life cycle 2022-01-24
+	or
+	expiration "" means will never expire 
+	
+	passwd -S [username] - status
+	
+	paswswd [username]
+	passwd -n [days] [username] - number of days before pword can be changed
+	passwd -x [days] [username] - expires
+	passwd -i [days] [username] - grace period
+	
+	passwd -n [days] -x [days] -i [days] [username] -> all combined into one
+	
+	forced expiration: next login, pword change will be required
+	passwd --expire testmdp
+	
+	Test: su - testmdp
+	Password:
+	You are required to change your password immediately (root enforced)
+	
+SPECIAL CASES
+	passwd -S [username] - status
+	
+	passwd -NP
+	when pword is empty, will display NP (no password) <- NEVER HAPPEN
+	
+	passwd -l [username] locks the pword
+	when pword is locked, will display L (locked) -> impossible to use
+	
+	the system will indefinitely ask for pword
+	connections using RSA keys will remain possible
+	cannot unlock one's own password
+	root can unlock anyone's pword with the following command: passwd -u [username]
+	
+USER ACCOUNT
+	chage - ch"anging" age
+	
+	chage -l [username]
+	last pword change							: date
+	pword expires								: never 
+	pword inactive								: never 
+	account expires								: never 
+	minimum num of days between pword change	:0 
+	maximum num of days between pword change	:99999
+	number of days of warning before pword exp	:7
+	
+	chage -E 2022-06-24 [username] 
+		-> cause account to expire 6/24/2022-01-24
+	
+	chage -E 0 [username] -> fully lock account
+		-> causes account to expire 1/01/1970
+		
+	chage -E -1 [username] -> never
+	chage -M 90 {username} -> expires 90 days
+	chage -M 99999 {username} -> never expires
+	chage -I -120 (username) -> account will be locked after 120 days
+	chage -I -l [username] -> will never be locked
+	
+	chage -I -1 -M 99999 -E -1 [username] -> full unlock
+	
+	chage [username] will display one-by-one

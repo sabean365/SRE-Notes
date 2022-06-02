@@ -1,0 +1,77 @@
+
+https://us02web.zoom.us/j/85717624310?pwd=bXB4RktuU2Rid0ZjN3J3UjcwK2lzZz09
+
+PYTHON FUNCTIONS
+
+	Define them with a def keyword
+	Functions must be defined (def) before called
+	
+	Python does NOT have the concept of block scope
+		function and global
+		variables are either defined within a function -> local
+		or are globally accessible -> global
+		within a function, you can use the global keyword
+		
+	Return statement uses return keyword
+		can only return one value, but that one thing can be a list, object, collection
+		return functions like a break in a loop
+		as soon as return statement is hit, the function is removed except for the return value
+	
+	Functions without a return statement have an IMPLICIT RETURN -> None
+	Function def has a type of function and are FIRST CLASS objects in memory
+		functions can be arguments for other functions
+		functions can be returned from other functions
+	Function arguments can be called as part of other function's execution
+	
+PARAMETERS AND ARGUMENTS
+	In function defition it calls a parameter
+	In a function what is passed in is called an argument
+	
+	
+	def greet(name = "No one"):
+	  return f"Hello {name}"
+
+	#function overloading -> polymorphism
+	print(greet("Universe"))
+	print(greet())
+	
+	ERROR: def holiday_greet(name = "You", holiday):  cannot have an argument with a defult value after one that is assigned
+	NOT AN ERROR def holiday_greet(name, greet = "Happy", holiday = "Birthday")
+	
+	*argument accepts any number of arguments
+	def get_total(*args): creates a tuple ()
+	
+	def get_pairs(**kwargs): creates a dictionary
+	  print(kwargs)
+
+	get_pairs(a = 1, b = 2, c = 3)
+	
+	print accepts any unnamed arguments -> *args, also named arguments, separators, and end characters
+	
+Lambda FUNCTIONS
+	lambda is a small, ANONYMOUS functions -> so do not assign a lambda to a variable!!!
+	must be only one line
+	implicit return value
+	used in higher-order functions
+	
+	def my_map(sequence, map)
+		res = []
+		for elm in sequence: res.append(map(elm))
+	
+	print(my_map([1,2,3], lambda x: x * 5)
+	print(my_map([1,2,3], lambda x: f"{x}!"))
+	
+	+++use lambdas only when they can shorten the amount of code you have to write+++
+	
+	def times_five(x):
+		return x * 5
+		
+	and
+	
+	lambda x: x * 5
+	
+	ARE EQUIVALENT
+	
+	
+	
+	

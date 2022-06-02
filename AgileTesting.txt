@@ -1,0 +1,30 @@
+
+AGILE TESTING
+
+Quality - Product Owner
+	Validity (must work per requirements)
+	Reliability (must work all the time) 
+	Scalability (cost of features, servers, size)
+	Performance (CPU, memory, database size)
+	Robustness (software must be reliable, database must have some redundancy)
+	Reusability (can you port the code to another project) 
+	Security (2-factor auth, biometrics--functional or non-functional)
+	Compatability (is it compatibile across devices and platforms)
+	Efficiency (time takes to download, time takes to log in, time takes to add/edit)
+	
+Quantity 
+	Budget 
+	Efforts 
+	Time 
+	Knowledge/Skills 
+	Focus/Attention/Monitoring
+	
+Impact
+	Team Synergy
+	Custoemr Relationship
+	Credibility
+	Knowledge-Skills-Learning
+	Improved Processes
+	
+
+	

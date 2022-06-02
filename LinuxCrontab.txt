@@ -1,0 +1,51 @@
+
+
+CRONTAB - Script Scheduler
+
+	Allows to schedule and periodically run any of the executable process or script
+	Somehow is equivalent to Windows Task Scheduler
+	The minimal granularity of the scheduling: every minute (most infrequent = yearly)
+	
+	PROS:
+	Very powerful mechanism present in all Unix/Linus and MacOS
+	Scheduling can be scripted or otherwise automated itself
+	There is a possibility to define separate schedules for every user on the server
+	
+	CONS:
+	Need to know syntax
+	Any schedule would be periodic; it is impossible by default to schedule a one-time run
+	The default granularity is once every minute - cannot run every second
+	
+	zone goes
+	min (0-59) -> hour (0-23) -> day of month (1-31) -> month (1-12 or jan, feb, mar, apr, may, jun...) -> day of the week (0-6 where Sunday is 0)
+	* => any value
+	
+	15 7 * * * /programs/script.ksh - runs every day at 7:15 am
+	
+	0 2 1 * * /scripts/backup.ksh -> runs first day of every month at 2 am
+	
+	28 19 28 1 * run every year on Jan 28 at 7:28 pm
+	
+	* * * * * -> run every minute
+	
+	crontab -u serguei -l -> lists serguei's schedule 
+	
+	crontab -e will create a temporary file which is used to type in the script as above
+	
+	when you type ls -l 
+	
+	root can edit on cron/var/
+	
+ 	/etc/cron.allow -> anyone not in this file will not be allowed to use crontab -> whitelist
+	/etc/cron.deny -> anyone in this file will not be allowed to use -> blacklist
+	
+	if a user is NOT in both -> default is blacklist 
+	if user is in both -> user can use 
+	if cron.deny exists but no cron.allow -> everyone else can use 
+	
+ARCHIVE
+	tar cvf SARAH_BACKUP.tar *
+	cp SARAH_BACKUP.tar /tmp/
+	cd /tmp
+	tar xvf SARAH_BACKUP.tar 
+	compress tar cvfz SARAH_BACKUP.tar.gz *

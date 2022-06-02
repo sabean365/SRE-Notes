@@ -1,0 +1,72 @@
+
+
+Azure AKS
+Azure Container Registry (ACR)
+
+Azure Container Registry is a managed, private Docker registry service (default by private)
+We can create and maintain Azure container registries to store and manage our  private Docker container images.
+With ACR, we can simplify our container lifecycle management.
+Geo-replication to efficiently manage a single registry across multiple regions
+Automated container building (from GitHub repo) and patching including base image updates and task scheduling
+Integrated security with Azure Active Directory (Azure AD) authentication, role-based access control, Docker Content Trust and virtual network integration
+
+
+Kubernetes only pulls images -> nothing to do with pushing
+Store images on ACR -> will be building and pushing images to ACR
+
+Needs docker-server, docker-username, docker-password -> "secret" 
+
+Integrate ACR & AKS
+
+Pull Images from ACR using Service Principal
+1. generic uname and password
+2. Service Principal <= BEST CHOICE
+	-> client ID and client secret from AKS node pool
+	
+	
+	docker tag kube-nginx-acr:v1 aksacr365.azurecr.io/app1/kube-nginx-acr:v1
+	
+	export ACR_REGISTRY=aksacr365.azurecr.io
+	
+
+	
+	export ACR_NAME=aksacr365
+	
+	(base) 18-01-ACR-attach-to-AKS $echo "Service principal ID: $SP_APP_ID"
+	Service principal ID: 92640c3b-f214-46bc-99a1-72bb8a77b531
+	
+	(base) 18-01-ACR-attach-to-AKS $echo "Service principal password: $SP_PASSWD"
+	Service principal password: Ziqk.buNLq6-b-iNPa5K0CIUzj8AxySL8X
+
+
+      imagePullSecrets:   # Update Image Pull Secret Name we creted
+        - name: acrdemo-secret 
+		
+		acrdemo365
+		yX46rIPnmB/mno5sHfO7Kd7v+SfBU6HU
+		
+		export ACR_REGISTRY=acrdemo365.azurecr.io
+		
+		docker tag acr-app2:v1 acrdemo365.azurecr.io/app2/acr-app2:v1
+		
+		
+		docker push acrdemo365.azurecr.io/app2/acr-app2:v1
+		
+		kubectl create secret docker-registry secret365 --namespace app2 --docker-server=acrdemo365.azurecr.io --docker-username=c7a312a8-1908-4c62-a942-9b005b520aad --docker-password=cAEMfSFEMsrtHUlkhpZyWS-7jobg2fj7eq
+
+kubectl create secret docker-registry secret365 --namespace default --docker-server=acrdemo365.azurecr.io --docker-username=c7a312a8-1908-4c62-a942-9b005b520aad --docker-password=cAEMfSFEMsrtHUlkhpZyWS-7jobg2fj7eq
+    --docker-username=80beacfe-7176-4ff5-ad22-dbb15528a9a8 \
+    --docker-password=0zjUzGzSx3_.xi1SC40VcWkdVyl8Ml8QNj    
+
+Registry ID=/subscriptions/a7476f0d-8661-459b-ae96-986c28263192/resourceGroups/aks-rg2/providers/Microsoft.ContainerRegistry/registries/acrdemo365
+
+SP_PASSWD=$(az ad sp create-for-rbac --name acr-sp-demo --scopes /subscriptions/a7476f0d-8661-459b-ae96-986c28263192/resourceGroups/aks-rg2/providers/Microsoft.ContainerRegistry/registries/acrdemo365 --role acrpull --query password --output tsv)
+
+SP ID: c7a312a8-1908-4c62-a942-9b005b520aad
+cAEMfSFEMsrtHUlkhpZyWS-7jobg2fj7eq
+
+kubectl create secret docker-registry <secret-name> \
+    --namespace <namespace> \
+    --docker-server=<container-registry-name>.azurecr.io \
+    --docker-username=<service-principal-ID> \
+    --docker-password=<service-principal-password>

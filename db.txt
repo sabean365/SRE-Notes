@@ -1,0 +1,35 @@
+
+1st Normal Form
+	Separate repeating groups
+	
+2nd Normal Form
+	remove any partial dependencies caused by Item
+	Item description not duplicated
+	
+3rd Normalized Form
+	Removes transitive dependencies
+	
+	
+DDL - Data Definition Language ->defines database structure or schema
+	CREATE	- used to create schema, tables
+	ALTER
+	DROP
+	TRUNCATE deletes the data but preserves the table structure
+	DESCRIBE
+	
+DML - Data Manipulation Language - CRUD operations
+	INSERT
+	UPDATE
+	DELETE
+	SELECT
+	
+GROUP BY with Aggregate:
+	COUNT
+	MAX
+	MIN
+	AVG
+	SUM
+	
+HAVING limits what is being aggregated
+
+select rest_id, count(chef_id) from chef group by rest_id having rest_id > 3;

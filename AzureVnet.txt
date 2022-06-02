@@ -1,0 +1,44 @@
+
+
+3-Tier Architecture
+
+	1, Web servers
+	2. Application servers
+	3. DB servers 
+	
+	Vnet needs subnets
+		user -> web server -> application server -> db server
+		user <- web server <- application server <- db server
+		
+	Characteristics of VNet 	
+	scoped to a single region
+	cannot span across multiple regions
+	scoped for a single subnets
+	
+	Internet to Application
+	
+	two separate vnets
+	
+	
+Steps:	
+	-> Create resourceGroup 
+	-> Create Vnet -> add subnet backend
+	-> Create load balancer with inbound/outbound rules + health probe rules + frontend ip configuration + backendppool
+	-> Create VM using HTTP/SSH -> download SSH key
+	-> Connect VM to Vnet -> open git bash 
+	-> run the command:
+	ssh -i Downloads/mylbVM_key.pem <azureuser@40.69.171.222> <==public IP Address listed on connect page
+	
+	run the following commands to connect:
+	sudo apt-get update - gets all the updates
+	sudo apt-get update -y
+	sudo apt-get install apache2 -y
+	sudo systemctl status apache2
+	
+	To disassociate IP address from VM, go to mylbVM-ip click on disassociate
+	The public IP address will not show anymore
+
+	To use Load Balancer we have to autoscale the vnet and VMs
+	Use Virtual Machine Scale Set
+	
+	ssh -i Downloads/my_key.pem

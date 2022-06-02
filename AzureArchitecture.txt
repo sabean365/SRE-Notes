@@ -1,0 +1,36 @@
+
+
+AZURE ARCHITECTURE CENTER - 5 PILLARS OF ARCHITECTURE EXCELLENCE
+
+Cost Optimization
+	If you want to be customer-centric, you must be data-centric.
+	Processes and procedures -> follow best practices -> change management -> change request
+
+Operational excellence
+	Moving to the cloud -> monitor
+	Add new features -> should not hinder current -> monitor
+	Continuous Improvement -> start automating manual tasks -> achieve operational excellence
+	
+Reliability
+	A system that works and does not have faults or losses
+	-> subnets
+	-> load balancer
+	-> redundancy
+	
+Performance Efficiency
+	Change servers 
+	Create subnets
+	Create VMs
+	Create 
+	
+Security
+	Must secure data 
+	Use different solutions depending upon the product
+	Bastion host -> best practice in industry
+	
+
+CORPS IS THE ACRONYM
+
+
+
+

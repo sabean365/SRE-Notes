@@ -1,0 +1,74 @@
+
+
+DevOps
+
+Site Reliability Engineering
+	
+	business requirement -> analyze -> coding
+	
+	Development			<---------->	Operation
+	
+	Developer -> App					Operate and maintain the application
+	
+															load balance
+													
+	Domain -> host						Server1 - host application			Server2 - host 
+												  operate and maintain				  second copy of code
+												  the application
+												  AWS
+	
+										Deploy the updated code
+	
+	Context: Launching a new feature vs reliability
+	Product Teams want to move fast
+		Deploy as many features as possible
+		Deploy as fast as possible
+	Reliability Teams want to be stable
+		Focus on reliability
+		Break as little as possible
+		
+		
+	DevOps is a collaboration between Development and IT Operations to make software production and deploymnet in an automated and repeatable way
+
+	Development - Teamwork and Innovation
+	
+		++
+	Ops  - Automation and Collaboration
+
+WHY DevOps?
+	Combination of Technology, Process and Culture
+	
+	
+DevOps Models
+	Left to Right Approach - Developer -> GIT -> Build Code/Unit Testing -> Artifacts -> Dev -> QA Test -> Pre-Production -> Production
+	Right to Left approach -> continuous feedback from end user perspective
+	Continuous Learning and Experimentation
+	
+Continuous Integration in DevOps - check in once a day
+
+Continuous Deployment - putting all changes to production environmnet making sure changes are free from errors and sustainable -> high quality
+
+Continuous Delivery - system that facilitates you to make continuous deployment
+
+Cloud - go global in minutes
+
+DevOps solves
+CI and CD - 3 ways
+Infrastructure Automation
+Managing the relationship between Dev and Operations
+Failing intelligently
+
+Kubernetes
+Ansible
+Bash
+Management
+
+
+GIT - manage collaboration of software development
+Linux - Everything is Linux
+Ansible - automate tasks with operation infrastructure
+Terraform - deploy automation in public cloud
+Docker/Kubernetes Deploying Cloud
+Python - scripting
+Jenkins - build and deploy code
+Grafana and ELK ensure operations are funning smoothly

@@ -1,0 +1,69 @@
+
+
+SSH - encrypted tunnel
+
+authorized_keys
+contains a list of public keys of users who will need to use RSA
+each key must be written on one line
+authorized keys must have permissions: chmod 600
+
+/etc/ssh/sshd_config -> 'd' is for server
+ 
+SSH behavior:  ONLY USE RSA keys to connect is MOST SECURE
+default port number is 22
+login restrictions for root and others: root denied -> declaration: "PermitRootLogin no"
+usage of RSA keys or not: set up -> "PubkeyAuthientication yes" and "AuthorizedKeysFile .ssh/authorized_keys"
+password use or not: do not for others but for restricted list, including sysadmins -> "PasswordAuthentication no"
+allow empty passwords or not: NOT
+whitelists -> NOT DEFAULT -> heightened security level
+separated configurations per user? OR
+separated configurations per service type?
+
+
+sshd_config will check for keys in /home/[username]/.ssh of client
+on server, will go /home/[username]/.ssh/authorized_keys
+
+Whitelist:
+AllowUsers stu2022
+
+
+Match User student #
+	some-personalized-SSH-directives
+	
+Match Group [groupname] #
+	some-personalized-SSH-directives
+	
+Example:
+User jack exceptionally can use password or connect
+
+PasswordAuthentication no
+Match User jack
+	PasswordAuthentication yes
+	
+	
+should make a copy of original sshd_config file in case you make a mistake
+
+each modification done requires that the SSH be restarted:
+
+	systemctl restart sshd
+	
+SSH 
+	-> SFTP file transfer protocol
+	utilization:
+		sftp remoteuser@remotehost + standard fTP directives 
+		
+	-> SCP seccure copy protocol
+	utilization:
+		scp locuser@lochost:/local/file   remoteuser@remotehost:/remote/file
+
+	
+	 /home/u_client/.ssh/id_rsa.pub
+	 
+	 ssh u_client@localhost
+	 ssh u_server@localhost
+	 
+	 to go into log file from root: cd /var/log -> vi secure
+	 
+	 cp /home/u_client_1/.ssh/id_rsa* .
+	 chown (change ownership) u_client_2. id_rsa*
+	

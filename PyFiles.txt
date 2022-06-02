@@ -1,0 +1,30 @@
+
+
+FILE HANDLING
+	open function is globally available
+	the open() function will access a file if you pass a file path
+	
+	passed the open function a second parameter
+	
+	r* = read
+	a* = append
+	w* = overwrite
+	
+	with keyword is for error handling
+	
+	.read() read the whole file
+	.read(10) will read the first 10 characters
+	.read(100) will read out up to 100 characters
+	if you attempt to read twice, you will get an empty string
+	
+	.readline() will read a line to the endline
+	
+	the "w" mode of the open() function will overwrite the file at the given file path
+	the "a" mode of the open() function will append the file at the given file path
+	
+	can read bytes of an image and copy them and create a new byte-wise image
+	
+	use 
+		with open("file.txt", "rt") -> the with keyword will close the file
+		
+	can use ("file.txt", "a+t") -> append and r/w

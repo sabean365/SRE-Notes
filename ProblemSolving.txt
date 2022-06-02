@@ -1,0 +1,293 @@
+Evolution
+
+Software/Network
+	Clusters
+	Machine networks
+	Cloud computing
+	IoT
+	Decentralized
+
+Mindset of TEch Stakeholders
+	End user openness
+	Innovative Businesses
+	Supportive Authorities
+	tehcnology partners
+		Hardware
+		Software
+		Network
+		
+Why? Each push and pull for efficency/performance/speed -> growth -> Goal is to make people's lives easier
+
+AI and software
+
+How IT helps business enter
+transmitting, story, maniputlating and retrieving data, including speech, text, movie, graphics
+
+role of It company is more productive, increase performance, improve experience streamline communications and enhanve managerial decision making
+Companyies can exand globally to provide 24/7 access
+
+Storing
+Making
+Providing
+Creating
+Processing
+
+communitcation software, email, video chat, company intranets and internet - cost cutting due to savings on travel in terms of $$ and time
+
+automation - improves 
+CRM sofware leads, sending promotions, and tracking marketing
+
+Decision making ERP software online dashboard with info
+
+Security - bio, store in dabase in cloud, allows to expand internationally as setting up multi-language websiet that markets to global customers allows purchases in globel currencies
+
+--
+
+Recruitment - online - more qualitfied job candidates and handle hiring prosess
+
+
+What IT is 
+
+Cloud computing
+Authomation
+Remote work
+Mobile tech
+Protecting info
+Providing Customer Satis
+Management of Resources
+Open source software
+
+
+Cloud computing capitalizes on ability to provide improved agility and time and resource management
+business can grow and shrink bases upon need in the cloud
+
+Automation - reduces cost and time of operations
+Billing, tracking metrics, collecting customer data, monitoring certain process, etc
+
+Mobile tech - BYOD
+
+Proecting info - IT provides the right resources to store the info in a way that ensures - limited users
+
+Customer satisfation
+
+Open source software - free use of tools - flexible license - can customize according to requirements
+
+Remote work
+
+
+PROBLEM SOLVING
+any space/area/gap between given intial state and desired goal sitution
+It is associated with difficulty level to reach desired state
+
+
+problem
+	wll defined problems
+	clear solution/goal exist
+	specific strategies can be used
+	
+non-routine - solution to customer - do they know what they want?
+	unlcear
+	abstract
+	confustion
+	requires critical thinking and crative problem solving strategies
+	
+PROBLEMS THAT EMERGE IN SOTWARE SYSTEMS - software problems
+	code bug, deficiency, error
+	external environment that is out of scope of software - hardware, user error, etc
+	request for new or additional development/features to evolve a given solution to end user
+	
+SOLVING
+	overcoming obstacles
+reaching from intial stage to desired stage
+
+
+Importance of Problem Solving
+	complex of all intllectual functions, high order cognitive functions
+	a meta-skill order skill that allows you to engage with functional expertise more effectively
+	it's a catalyst for learning and building new skills faster
+	skills are temporary
+	part of larger prolem process that includes problem finding and solutioning
+	
+Overcoming obstacles for normalized functioning - from intitial stage to desired stage:
+	goals -> problems challenges -> opportunities -> requirements
+	
+From Programming Perspective:
+	Take a problem and write an original problem to solve it
+	
+Stages of Problem Solving - problem description enters the cycle
+Act of defining the cause of the problem, determining the cause, iding, prioritizing, and selecting alternatives for a solution
+	Define
+	Analyze
+	Develop
+	Implement
+	Test & Fix -> Solution
+
+	
+Defining a problem - a problem well stated is a problem half solved
+
+
+1. Diagnose the problem - its context - its background - its symptoms
+	WAYS TO FIND SOLUCTION: Brainstorming -> Interviewing -> Questionnaires
+
+	Analyze problem statement - bug or new feature
+	Severity of problem	
+		high - fatal
+		medium - some functions do not work
+		low - no major impact
+	Frequencey - how frequently the problem occurs
+		what specific user action causes the problem
+	Priority - of the solutioning
+	Contacts of who reported the problem or requested the new features - need to collect contacts
+	Any artifacts or logs attached
+	Which node in the system is impacted?
+	Which function is affected?
+	Which stakeholders are impacted?
+	What are the environmnetal setup? Parameters setup in the system?
+	
+	Interview:
+		Help you understand the problem better
+		Clarify potentional misunderstaing
+		Help stakeholders to reveal more relevant info
+		separate facts from opinions
+		scrutinize facts if there is ambiguity
+		
+		Address one issue in one
+		Be specific
+		Clear and simple
+		Positively phrase ("we")
+		actionable
+		
+	Brainstorying
+		goal is to generate ideas
+		builds teamwork
+		builds trust
+		unstructored allows anybody to contribute any idea at any time
+		Structioned method controls input by everybody given an equal chance
+		
+	+++++++++++++++++++++++
+	
+	Calendar app
+		with whom will you setup meetings/interviews/brainstorming sessions?
+		
+		Personal profile - add dates function -> either personal/private or public
+		Team profile - add meetings - email notifications, optional alerts
+		Company profile - days off, company-wide actities and dates
+		
+
+	M; Must - or mandatory
+	S: should be implemented if possible
+	C: Desirable requirement but not necessary
+	W: Wont be included
+	
+	Table - Requirement Analysis Matrix
+	Req ID - Requirement Statement - type - Complexity - priority - any assumption? - accepted?
+	
+	
+	Use Case Requirement Analysis
+		
+Strategies
+	Divide - conquer - combine
+	Divide and conquer - test segrments and beds
+
+	3 Development STrategy and Plan - building component Knowledge
+		understand how components are linked
+		understah which components will need to be updated
+		to undeerstand which interface, libraries, frameworks are available to develop the solution instead of rewriting
+		to understand what test coverage will need to be provided
+		
+	Building component knowledge
+		developing and learning goes hand in hand
+		learning aids development and developmnet adds
+		
+	Reduce the problem, if needed
+		Start with what you know - work outward
+		Look for analogies - decide on reuse
+		Define requirements at development level (technical, code modules, users)
+		Environment. dummy inputs, simulation, and information from stakeholders (test team, other node teams)
+		
+	Design solution at high level
+		Understand various processes should be developed as per the requirements
+		Develop high level of flow of the data among the various processes
+		Develop algorithms for complex computation, percentile calculation.
+		
+	Design solution at high level - flowchart - Data flow diagram
+	
+6 thinking hats - Process for Parallel Thinking
+	Objective - facts, figures, data and information (white)
+		what information do we have here?
+		what information is missing?
+	Feelings - feelings, intuition, emotions (red)
+		gut feeling - promising but difficult - I don't link to the way this is being done
+	Negative - Caution, difficulty, judgement and assessment (black)
+		Is this true? Will it work? what are the weaknesses? What's wrong?
+	Positive - Benefetis Feasibility and optimism (yellow)
+		Why is this worth doing? Benefits? Why will it work? 
+	Creative - Creative ideas, alternatives, suggestions and proposals (green)
+		What is a different way? Is there another explanation, better solutions, more efficiency
+	Process - Sum up, Reflection, Conclusions, Decisions (blue)
+		Set the agenda, next steps, 
+	
+
+	Validity - what you stated you provide has to work - selected solution provides all the internal functional requirements
+	Reliability - selected solution works every time in all possible and valid scenarios
+
+Implementation
+	Agree team members and prepare a plan - Plan sets out actions required before & during implementation -> Tools such as Gantt chart, timeline
+	
+SWOT analysis - Strengths, Weaknesses, Opportunities, Threats
+
+Strengths
+	Programming
+	Knowledge
+	Certifications
+	Knowledge store
+	People skills
+	reusable resource
+
+Weaknesses
+	Coder's block
+	Lack design skills
+	Insufficient domain knowledge
+	
+Identify developmental resources
+	mobile stack development
+	APIs
+	Utilities
+	Reusable code
+	Similators
+	Tests beds
+	Libraries
+	Open source
+	Monitorin utilities
+	IDE
+	debug logs
+	
+Testing
+	Unit, Design, Integration, User Acceptance Testing (UAT)
+	Reliability, Time -> Performance
+	
+Automation plays role in unit testing
+
+Visibility/observability - what you see is what can be tested
+	optimize CPU, ability to observe the inputs, outputs, states, internals, error conditions, resource utilization, and other side effects of the system under test.
+	
+BUGS - determine the root cause of the problem	- reproduce the problem is exercise number one
+	define problem/diagnose
+	group explores possible and probable causes
+		fishbone diagrams, pareto analysis, affinity diagrams
+	root cause is identified
+		group may need to revise problem definition
+		repeat process till all agreed
+		
+
+		
+Use Case Table
+
+Use Case Name  	Creating a Meeting
+Description  	Posting a meeting event for a team on the team calendar
+Actors			Administrator/Team Lead and Team
+Pre-condition	Team Lead must be logged-in to app and have admin access to team calendar
+Post-condition	After successful creation of event, team receives emails, team sends RSVP, and admin receives RSVPs
+Except Flow		In case of incorrect email on list, error flagged and email sent to admin
+
+

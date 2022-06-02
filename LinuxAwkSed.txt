@@ -1,0 +1,82 @@
+
+
+LINUX PROGRAMMING
+	awk - text processsor
+	
+	awk [awk-program][taget-file]
+	[shell commands, bash, etc] | awk [awk-program]
+	file reading (or another input) | awk [awk-program]
+	
+	| = "redirect" or "pipe"
+	
+	awk 'BEGIN {before-input} condition {reading-input} END {after-input}'
+	
+				once^^^                  many times^^^       once^^^
+				
+	parse of an ascii file (for example with cat command)
+	parse of a bash command proficing output (such as ls -l)
+	
+	awk 'BEGIN {print "Hello from the BEGIN section!"}'
+	
+	cat my_file | awk 'BEGIN {print "Debut"} {print "I read file lines 1 by 1} END
+	{print "Done!"}'
+	
+	awk true usage == better than bash scripting
+		aggregations and calculations
+		filtering
+		masking
+		conditioned displaying
+		
+	AWK has its own functions and variables to process character strings
+	I'ts possible to declare variables and its own functions
+	
+	FILENAME
+	
+	NR - number of current record = the line that is currently processing
+	
+	NF - number of fields = contains the number of text zones (separated by space)
+	
+	
+	To read a file, extract the 3rd line, and store it in another file:
+	cat my_file|awk 'BEGIN {} NR == 3 {print} END {}'>resulting_file.txt
+	
+	cat my_file|awk 'NR == 3'>resulting_file.txt
+	
+	$ ls -lrt file* (file* = all the files starting with 'file')
+	$ ls -l file* | awk 'sum_of_sizes += $5} END '{print}'
+	
+	cascading
+	$ ls -l | awk '{print}' -> list of files
+	$ ls -l | awk '{print}' | awk '{print sum_of_sizes}' -> prints the sum_of_sizes
+	
+	used for files that are log files
+	
+	++++++++++++++++++++++++++++++++++
+	
+	sed = stream editor
+	text processor which works with input streams -> can process it globally or line by line
+	
+	sed [sed-program] [targe-file]
+	
+	the most frequent set utilizations are text/pattern replacements - based on vi syntax
+	sed allows extrapolate vi commands outside of a given file
+	
+	sed 's/hello/bonjour/g' file_1.txt > file_2.txt -> output in file_2.txt will have all bonjours instead of hellos
+	
+	sed -i 's/hello/bonjour/g' file_1.txt ->changes the text in file_1.txt
+	
+	sed -i 's/hello/bonjour/g' file_1.txt file_2.txt file_3.txt -> will replace the workd in all files
+	
+	-i does not keep the original file contents
+	
+	examples
+	sed '' file_01.txt will display contents of file_01
+	sed '' file_01.txt file_02.txt will display the contents of both files in one single line
+	sed '' will just wait -> CANNOT USE
+	
+	cascading
+	sed '' file_01.txt
+	sed '' file_01.txt | sed '' file_01.txt
+
+	++++++++++++++++++++++++++++++++++
+	

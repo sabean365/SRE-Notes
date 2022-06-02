@@ -1,0 +1,88 @@
+
+NETWORKS
+	IP Addresses
+	192.168.123.22 -> four sets of binary numbers
+	
+	CIDR - Classless Inter-Domain Routing
+	VLSM - Variable Length Subnet Mask
+	Increase flexibility of subnetting
+	
+Netweork Interfaces
+	CIDR subnet mask/XX where XX number of bits that determin the network /32 means network 0/hosts -> cannot have a subnet -> this is the way mortals' ip address is /32 because not allowed to have subnets
+		subnet mask 255.255.255.255
+	
+	170.28.32.0/24 -> 24 bits network and 8 bits to number of hosts, i.e. number of available IPs for eventual subnets (i.e. 2 pow 8 -2 = 254)
+		subnet mask 255.255.255.0
+		
+	170.28.32.10/19 -> 19 bits network and 13 bits determine hosts, i.e. (2 pow 13 - 2 = 8190)
+		subnet address range: 170.28.32.0 to 170.28.63.255 
+		
+		examples 	170.28.34.12/19
+					170.28.55.155/19
+					170.28.62.2/19
+					
+	69.82.190.190/12 -> 12 bits for network, 20 bits for hosts (i.e. 2 pow 20 -2 = )
+		69.80.0.0 -> 69.95.255.255 
+		
+Supernetting is the practice of a lot of subnet IP addresses -> cloud providers have such ranges -> the address used to represent the subnet is in the middle
+
+MAC = Media Access Control
+	uniquely defines each network equipment (hardware).
+	
+	XX:XX:XX:XX:XX:XX where each XX is a hexadecimal number between 00 and FF
+	
+	MAC address can be obtained:
+	ifconfig
+	ip addr
+	ip link
+	
+In virtual world, you can virtualize and assign mac address 
+MAC addresses must be unique in a network for this network to work correctly
+
+Static IP Addresses
+	The router assigns one static IP to each computer on the network
+	Each computer is configured to receive that particular IP address
+	The lease never expires
+	
+DHCP - Dynamic Host Configuration Protocal
+	The router has a predefined IP list that is can assign to any computer on the netweork
+	Each computer is configured to received any possible IP address
+	The lease will expire after some time if an IP is not in use anymore
+	
+ifconfig -a 
+
+When you create VMs in the cloud, something needs to play the role of the router 
+
+Network scripts
+	/etc/sysconfig/network-scripts/
+	
+	ifcfg-eth0 
+	ifcfg-eth1
+	ifup  startup script 
+	ifdown	stop script 
+	
+	ifup eth0
+	ifdown eth0
+	
+	if script name does not match, the ifup and ifdown will not work and an error will occur
+	DEVICE="ethX"
+	
+	ifcfg-eth0
+	TYPE="Ethernet"
+	BOOTPRTP-"none"
+	HWDADDR=[MAC Address]
+	UUID="[string of hex]" -> must always be unique 
+	DEVICE="eth0" -> must match equipment that has been created
+	ONBOOT="yes" network will start when the server starts
+	IPADDR="192.168.20.88"
+	PREFIX-"24"
+	GATEWAY="192.168.20.1"
+	DNS1="192.168.20.1"
+	
+Network Interfaces
+	/etc/network/interfaces
+	
+	can use apt install ifupdown
+	
+
+	

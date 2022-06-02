@@ -1,0 +1,61 @@
+
+Iterators
+	Lists, dictionaries, tuples and sets are all iterable objects
+	Strings, as a list of characters, are also iterable
+	
+	iter() function
+	next() function -> iterates to the next element
+	can only iterate one way - like a for loop
+	
+	empty iterator raises an exception
+	
+	range() function returns an iterator
+	
+Error Handling
+	The Zen of Python Principals 10 and 11
+	Python execution ceases and a log of the error is printed to the console
+	
+	try - except block allows code to continue execution without error
+	except general must go after the specific error handling
+	
+	except ZeroDivisionError:
+	except:
+	
+	except ValueError as e:
+		print(e)
+	
+	except Exception as e: will catch all errors
+		print(e)
+	->only use if your code absolutely cannot crash
+	
+	
+	else: will only execute if there are no errors
+	
+	
+	finally block will execute no matter what at the end of the try/except
+		good place to perform cleanup
+		->close connections
+		->end timers
+		->cancel subscriptions
+		
+	even sys.exit("Exiting") will print finally block
+	
+	#could throw exception
+	try:
+	  age = input("Enter your age: ")
+	  years = input("How many years have you been coding? ")
+	  percent = (int(years)/int(age) * 100)
+  
+	except ValueError as e:
+	  print(e)
+	  print("You did not enter an integer.")
+	except ZeroDivisionError:
+	  print("You are not even 1 yet. Too young to be coding.")
+	except: 
+	  print("Something went wrong. Try again.")
+	#only executes if there are no exceptions
+	else:
+	  print(f"You have been coding for {percent} percent of your life")
+	#always prints no matter what
+	finally:
+	  print("Thank you for using our system.")

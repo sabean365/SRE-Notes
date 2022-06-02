@@ -1,0 +1,223 @@
+
+DevOps
+
+Site Reliability Engineering
+	
+	business requirement -> analyze -> coding
+	
+	Development							Operation
+	
+	Developer -> App					Operate and maintain the application
+	
+															load balance
+													
+	Domain -> host						Server1 - host application			Server2 - host 
+												  operate and maintain				  second copy of code
+												  the application
+												  AWS
+	
+										Deploy the updated code
+	
+	Context: Laughning a new feature vs reliability
+	Product Teams want to move fast
+		Deploy as many features as possible
+		Deploy as fast as possible
+	Reliability Teams want to be stable
+		Focus on reliability
+		Break as little as possible
+		
+	Goal of SREs is to enable the product teams to move as fast as practically possible without impacting users.
+	
+	TALK-->	
+	User having issues with your service -
+		What is the issue?
+		How do we know if something went wrong?
+		What went wrong?
+		What action to take?
+		How to prevent these from occurring in the future?
+		
+	AVAILABILITY
+	Definition varies
+		% Uptime
+		% Requests served
+		
+	PATH TOWARDS HIGH AVAILABILITY
+		Add redundanccy N+2
+			More replicas - webservers, database
+			load balancers - distribution
+		Write more tests: integration tests
+		More humans ro respond to pagers
+		Maintain checklist of possible bugs, and run through the list for each release
+		Reduce release velocity
+			Release one feature at a time
+			Release a binary only after exhaustive automated and human testing
+				
+			New features
+			feature + abcd
+			developer transform -> ideas -> code
+			operation = server 50gb 32CPU
+			
+			manufacturing issues
+			logistics
+			too many requests for product
+			customer may not like feature
+			bug -> finger print -> reported across the globe
+			
+			3.8
+			
+			quality = 
+			
+			release -> new phone 
+			bug fix release -> emergency fix 
+			
+			6 month -> push update ->
+			Update doesn't work -> roll back to previous version
+			
+			
+			I want my app to be available ___
+			
+			Depends 
+			Trade-off on launch velocity and system stability
+				feature with low availability would be unusable - always broken
+				feature with high availability would be unusable - very boring, features missing
+			
+			Deciding on right availability target
+				Infrastructure (shared service) vs user-facing service
+				Mature vs New product
+				paid or free
+				high revenue impact vs low
+			
+				Logical cost-benefit analysis.
+				
+			AVAILABILITY
+				Service Level Indicators
+					Metrics that matter: 
+					- latency 
+					- throughput (number of requests processed per second) 
+					- Error Rate: % of requests answered
+					IT IS IMPORTANT THAT THESE METRICS ARE CLEARLY DISCUSSED AND MUTUALLY AGREED UPON
+					
+				Service Level Objectives
+					Latency - 300ms
+					Hard to define SLOs for some metrics
+					In those cases
+						It is important to have a hard upper limit
+				
+				 - Expected downtime calculations
+					99% 4 days dt
+					99.9% 9 hours dt
+					99.99% 1 hour dt
+					99.999% 5 min of dt
+					
+				 - Error budget
+					Target availability 99.9%
+					The service has gained some error budget
+				
+				- Reliable only up to the defined limit, no more
+					Sometimes, systems may give false impression of being over-reliable
+					Leads other teams to build with false assumptions
+					Extreme measure - Planned dt
+					
+				Planned downtime is used for error handling
+			
+			Abnormality Detection
+				Monitoring
+				Without monitoring - no way to know if system is working - predict a future issue, is not at all possible
+				Good monitoring
+					Enables analysis of long-term trends
+					Enables comparative analysis
+					Enables conductin ad hoc analysis - latency shot up, what else changed?
+				NEVER REQUIRES A HUMAN TO INTERPRET AN ALERT
+					Humans add latency
+					Alert fatigue
+					Ignore, if alarms are usually false
+				3 KINDS OF MONITORING OUTPOUT
+					Alert: Ture alarm - red alert. Human needs to take action.
+					Ticket: Alarm - yellow alert. Human neesd to take action eventually
+					Logging: Not an alarm - no action needed
+					
+					Logstash - Sumo 
+					
+					types of monitoring 
+						black box - (user level) mimics a system user and shows how your users view your systems
+						white box - (high level) viewing your system from the inside, for e.g. each service keeps counters of all backend service failures, latency
+							in terms of qps, peak, num_shards, backend_latency
+				
+				Life of an Incident
+					Report (log) the incident -> creates ticket 
+					10 users get error - monitoring system kicks in SEnds a pager to oncall SRE
+					In this case, black box monitoring kicked off an alert - after the fact alert
+					
+					white box monitoring can help predict and issue is about to happen + good centralized logging system used by ALL SERVERS
+						plays big role in figuring out the origin of the problem
+						allows SRE to discover where the issue is located - find underlying broken service causing the issue
+						gives solution by consulting playbook (documented remediation) of underlying service and finding out how to disable feature
+		
+		
+		MONITORING -> ->
+					
+		GUI - DASHBOARD
+			
+		SERVERS Application service 
+			WEBSERVERS
+			APP SERVER 
+			DB SERVER
+			
+			THRESHOLD = 80%
+			WHEN BREACH -> ALERTING MECHANISM -> ALL TEAM MEMBERS
+			WHEN THRESHOLD REACHES 90$ -> ALERT -> CRITICAL -> LOG THE ISSUE -> TICKETING TOOL -> TICKET GOES TO PARTICULAR TEAM
+			SERVUCES: WEB SERVER - CPU, Memory, Disk, Network
+				
+			SRE MONITORING PROCESS	
+			SELECT MONITORING TOOL -> INTEGRATE WITH THE SYSTEM -> BENCHMARK THRESHOLD -> LATENCY/DOWNTIME -> STTP 200 (GOOD) STTP 400 - 500 (ISSUE) -> ALERTS/NOTIFICATION -> INTEGRATE THE TICKETING TOOL -> LOG IN TICKET OR TICKET IS AUTOMATICALLY LOGGED
+			
+			If 80% threshold is reached -> log in -> top command in Linux -> discover process that is causing high threshold -> ticket or alert owner of the issue
+			
+		IN SUMMARY
+			Playbooks: guide to turning off features, feature flag names and descriptions
+			Mean time to failure (MTTF) amount of time to record issue
+			Mean time to recovery (MTTR) amount of time to fix
+			"Dependency means single point of failure."		
+			
+		Release Mgmt: Progressive Rollouts - release cycle (such as one release per month)
+			Software delivery -> release new feature
+			
+			Canary servers - a few production instances serving traffic from new binary
+			Canary for sufficient time - Give the new binary some time to experience all posssible use cases
+			Canary become prod on green
+			Changes be backward compatible with 2-3 releases - Binaries can be safely rolled back (to blue)
+			Two servers with old version and two servers with new version. If green (new) fails, revert to blud (previous).
+			
+			No-blame postmortem
+				Teams write detailed postmortem AFTER resolving outages
+				Not attributed to any single person / team
+				Structure
+					What went wrong?
+					What was the immediate fix?
+					What is long term fix?
+					What can we do to prevent it occurring in the future?
+					
+			Catastrophe Testing
+				Test to break the system
+				
+				
+			Possible scenarios of web traffic
+				- Users per day: 100
+				- Business and non-business hours
+				- Peak hours
+				- Flash sale
+				- 50% offers
+			
+			Stress test for 5000 at once
+				Bring down a few machines
+				Network connectivity
+			
+		SUMMARY OF SRE WORK
+			Decide on what metrics to measure and target values
+			Monitor user facing and internal metrics
+			Alert only when necessary
+			Plan for failure mgmt - dashboards, playbooks and uniform logging
+			Avoid a culture of heros
+			Learn from failures
+				
+		

@@ -1,0 +1,10 @@
+ 
+UNIX/LINUX PART 2
+
+my notepages: man [keyword or letter]
+
+shell -> command interpreter
+
+shell is referencing Linux Command Line Interfact (CLI)
+
+there are several different shells, but they are at least 95% compatible

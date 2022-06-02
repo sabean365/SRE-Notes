@@ -1,0 +1,340 @@
+SDLC - PDDBTD
+Planning - Defining - Designing - Building - Testing - Deployment
+
+WATERFALL MODEL
+Requirements Analysis -> System Design -> Implementation -> Testing -> Deployment -> Maintenance
+
+Strengths
+	Good when requirements and scope is clare and impact is predictable
+	Easy to understand
+	Provides structure to inexperiences staff
+	Milestones are well understood
+	Sets requirements stability
+	Good for mgmt control (plan, staff, track)
+	Works well when quality is more important
+
+Weaknesses
+	No working software is produced until late during the life cycle - delayed value Realization
+	High amounts of risk and uncertaintly if requirements are changing - Difficult Change Mgmt
+	Not a good model for complex and object-oriented projects
+	Poor model for long and ongoing projectes: Poor utilization of ramped up resources in sustained work
+	Not suitable for projects where it is difficult to measure progress within stages: Metrics evaluation only at the end of each stage
+	Adjusting scope during the life cycle can end a project: Rigid Upfront Planning
+	Identifying any technological and buiness bottleneck or challenges early is not possible: Delatyed Market Hit
+	Less collaboration with end user/costomer to refine the product: Not customer centric
+
+Requirements Analysis
+	SRS
+	FRS
+	High Level Design Estimates
+	High Level Project Plan
+
+System Design
+	High Level Design
+	Detailed Project Plan
+	Detailed Design Estimates
+
+Implementation
+	Detailed Design Document
+	Coding
+	Test Coverage
+	Test cases specification
+	
+Testing
+	Issue tracking
+
+Deployment
+	Installation Guide
+	Commissioning Guide
+	UAT
+	
+Maintenance
+	Issues until APP or project is up and running
+	
+Iterative Model
+	Teams work in parallel once Requirements - High Level Design is completed
+	
+Agile Manifesto:: WE VALUE...
+	Individual and Interaction over Processes and Tools
+	Working Software over Comprehensive Documentation
+	Customer Collaboration over Contract Negotion
+	Responding to Change over Following a Plan
+	
+That is, while there is value in the items on the right,
+we value the items on the left more.
+
+Agile Principle
+1. Custoemr statisfaction
+2. Welcome change
+3. Deliver frequently:: Focus on shorter timescale
+4. Work together:: All statkeholders work throughout the course of the project: builds system thinking
+5. Motivated Team:: Empowered to make decisions, plans, confident about getting job done
+6. Face-to-face Interactions.
+7. Working Software:: User feedback on the real incremental system not reports, prototypes or visualizations
+8. Constant pace:: Continuos delivery
+9. Good Design:: Detailed insights on the components, processes, skills, technology through collaboration. Design in small pieces with focus.
+10. Simplicity:: Focus only on value generation. Non-value adding processes and parts are eliminated
+
+Scientific Method - Agile Approach
+	create hypothesis -> Plan some work
+	build an experiment -> Do the work
+	observe/learn from the result -> learn from feedback
+	repeat/iterate -> repeat to do more work
+	
+Agile ensures agility in::
+	Managing complexity
+	Adapting changes
+	Delivering viable software with speed
+	
+Plan -> Develop -> Test -> Deploy -> Review
+
+Key Characteristics
+	Incremental and iterative
+	Focus on valuable and usable product
+	
+Benefits of Agile Project
+	Most desirable product -> constinuous feedback
+	High quality
+	Faster product
+	Lower cost - up front cost is lower, change is more easily managed, code issues are discovered early
+	
+	For team:
+		higher job satisfaction
+		Creativity and innovative
+		Best utilization of skills
+		Lower risk
+		Predictable deliveries
+
+Types of Agile		
+	Team - Scrum, Kanban, XP
+	Enterprise - SAFe
+	
+3 Pillars of Agile
+	PRODUCT - CUSTOMER - TEAM
+	
+Perceived Product Vision works iteratively parallel to incremented developed product
+		
+	Perceived Product Vision	->	->	->	->
+	
+	Devloped Product			->	->	->	->
+	
+								Iterations
+								
+INCREMENT
+	Increment is a usable product that may be given to customer
+	Each increment must meet the organization's agreen upon definition of done
+	This includes quality and security standards, other organizational requirements, succh as requiring documentation for each feature
+	Each increment contains the work of the current iteration as well as the work of all prior iterations - building on iterations
+	
+SPRINT - ITERATIVE
+	time-boxed period used to work on an increment
+	the time is fixed:: between 1-4 weeks (usually 2 weeks)
+	Shorter sprints create an opportunity for more adaptation
+	Longer sprints allow for more work to be done in a single increment
+	It's up to each team to decide on the appropriate spring length
+	
+SCRUM FRAMEWORK/PROCESS
+	Product Vision -> Product Backlog - Product Owners specify vision of product with Epics and Stories
+	Sprint Planning -> Sprint Backlog - work to be done during the sprint. Pulled by the development team from product backlog
+	Daily Scrum Meet during Sprint development -> Product increment
+	Sprint Review (all stakeholders attend) -> Product shipped to customer site
+	Sprint Retrospective (team and scrum master)
+	
+SCRUM FRAMEWORK - MAIN PARTS
+	ARTIFACTS - used to see current state of project - accessible to relevant members and stakeholders - provides transparency - Helps to bring concerning members on same page - help smooth inspection and id adaptation at any given point in time
+		
+		Product Backlog
+			Ordered list of work items in the project based on priorities and depencies
+			Work item is issue or story among list of stories (features/functionality/improvement/bug fixes)
+				stories is type of work item "user stories" - short requirements or request of end user/customer
+					product owner writes stories - who, what, why but never how
+					produces verticle slice of working code - developed, tested, usable from end user
+					should be small enough that it can be coded and tested in one iteration
+					three C's: card, conversation, confirmation
+					INVEST (Independent, Negotiable, Valuable, Estimable, Small, Testable)
+					story acceptance criteria
+						Scenario Oriented - Given/When/Then
+						Rule Oriented - checklist
+						Custom formats
+				epics - larger bodies of work broken down into stories
+				tasks/subtasks - work items to be completed to complete a story
+				issues - can be any of the above work item or even a bug report or change request
+			Backlog - pending work
+			Due to continuous adaptation based on feedback the product backlog is ever changing
+			Product backlog is perceived vision of the product at any given point in time
+			Product owner is accountable for Product backlog and continuous changes
+		
+		Sprint Backlog
+			List of issues/stories to be completed within given sprint
+			Includes plan of execution and estimates
+				Story point is the relative measure of the amount of work required to complete a given story
+				Story points is commonly used statistic another option can be number of hours, number of worktimes or any other customized unit
+				It helps team decide how many stories they can pull in a sprint backlog to work in the upcoming sprint
+				Team estimates story points for the given story using Planning Poker technique
+			Created during Spring Planning Meeting
+				Scrum team determines its capacity - how many hours are each team member available for the sprint
+				Determine team's efficiency
+				Based on capacity, Scrum team plans the work which they want to cover in the sprint
+				
+		Sprint Goal
+			Sprint goal represents the objective of the sprint's increments
+			Helps team to remain motivated with the progress on the goal
+			Scrum team decides sprint goal during sprint planning
+			Sprint goal does not change during the sprint
+			Sprint goal is based on the common theme of the features/stories to be completed in a given sprint
+			Tasks associated with the goals may change based on the daily learning
+			Sprint is success when sprint goal is achieved
+			
+		Sprint Board
+			Jiro or Mira
+			To do - In progress - code review - done
+		Reports
+			Used to track crum metrics to review progress and effectiveness
+			enables transparency
+			based on data points in report, team can set new goals, build improvement plans
+			helps efficient collaboration specially in case of distributed scrums
+			- team velocity = amount of estimated team capacity/availability vs amount of work accomplished during the sprint
+			- sprint burn down chart - 
+				estimation statistic
+				remaining value, amount of work left (may not meet trend--flattened in places) 
+				speed with which team will finish remaining work bsed on the trend (downward curve that should end at zero)
+	
+	ROLES
+		Product Owner
+			Customr face of the team 
+			Works with sponsors for resources 
+			Leader/Owner of shippable product 
+			Communicates vision with team 
+			Owns/manages/orders product backlog (stories)
+			Empowered to make decisions
+			Represents team to stakeholders - face of the team to stakeholders
+			Guides team to optimize the efforts and maximize the value of the work - NOT technical architect
+		Scrum Master
+			Enacts the values and practices of Scrum
+			Facilitates the events and the process
+			Removes roadblocks/shields the team from disturbances
+			Responsible for improving day-to-day effectiveness of the team so that team reaches goals and improves continuously - makes sure all team members are heard
+			Tracks progress and works with management
+			A servant leader
+			Mentors the team toward a self-organized state
+			Enables close cooperation across all roles and functions
+			Responsible for increasing transparency of the project - configures reports, scrum artifacts
+			Coaches team and stakeholders on scrum and agile
+		Development Team Members - cross-funtional and self-organizing
+			Size ranging from 3 to 9
+			Self-organized team members
+			Flexible and adaptable
+			Continuously learning
+			Cooperative development - role sharing
+			Owns the estimates (sizes the work)
+			Commits to the work in the Sprint
+			Plans their own work - breaks user stories into tasks
+			Establishes their own velocity
+			Has the authority to do whatever it takes to meet team commitments
+		Stakeholders - not part of agile team
+			Interested in the successful delivery of the product
+			Internal - executives, managers, other scrum team/scrum masters
+			External - customers, investors, partners
+			Attend sprint demo
+			Overlook release plans
+			Interact with product owner
+		
+	EVENTS - fixed maximum - no minimum
+		Primary purpose is to plan, inspect and adapt
+		Prior to the sprint
+		Idea is to collaborate and cooperate
+		Not a status updated
+		Distributed planning
+		Coordinated by Scrum Master
+		
+		Sprint
+			2-4 weeks - fixed maximum - no changing
+		
+		Sprint Planning Meeting - What work can get done in this sprint? How will the chosen work get done?
+		CREATES: Empowered team rather than a command and control based team.
+			Day 1 of sprint
+			Scrum Team attends
+			4 hours for a 2-week sprint
+			Inputs: Product backlog, proposed sprint goal, proposed issues/stories by the product owner
+			Outcomes: Agreed upon sprint goal, sprint plan, sprint backlog
+			Activities
+				Pulling high value work, prioritizing
+				Sprint goal decided
+				Understanding issue/story
+				Breaking down it into tasks/sub-tasks
+				Estimating work (story points, task efforts)
+				Estimating team capacity/availability
+		
+		Daily Standups (Scrum Meet)
+		AGILITY - Aollavorate - continuously learn - adapt
+			Scrum Team attends
+			15 minutes
+			Inputs: product backlog, proposed sprint goal, proposed issues/stories by the product owner
+			Outcomes: Verbal, memorized plan for the day, decisions for the day
+			Activities
+				Inspect recent progress toward the spring goal
+				Plan the day's work and identify and impediments
+				The team usually makes plans to resolve impediments - but taken offline
+				Each member shares: Lessons of previous day, Plan for today, Roadblocks anticipated, Any help needed
+		
+		Sprint Review/Sprint Demo
+		VUEW OF WORK DONE IN SPRINT - Feedback, Bew of next sprint work
+			Last day of sprint - sprint demo
+			Scrum Team and stakeholders attend
+			30 minutes to 1 hour for 2 week
+			Inputs: Team shares high level view of work done
+			Outcomes: Feedback on the incremented product, high level view of next sprint work
+			Activities:
+				Team demos functionality/features
+				Inspect the increment created against the definition of done
+				To collaboratively update the product backlog - close the story
+		
+		Sprint Retrospective
+		CONTINUOUS IMPROVEMENT IN PROCESS, TOOLS, AND TEAM INTERACTION
+		EACH MEMBER SHARES - What they should keep doing, stop doing, and start doing.
+			Second half of last day
+			Scrum Team
+			90 minutes for 2 weeks
+			Inputs: Team shares what went well, what needs to be improved
+			Outcomes: Few improvement related issues to the next sprint backlog
+			Activities
+				To inspect processes, tolls, and team interaction
+				Positive meeting containing constructive feedback
+				Scrum Master ensures it is a positive meeting
+				Pick only one or two things that can be improved
+				Make sure everyone speaks
+				Scrum Master should spend time preparing the retrospecive
+				Focus on items the team can address
+				To show proggress, make sure improvement stories from the previous iteration are discussed either at the retrospective or planning
+			
+			
+	PMI vs SCRUM
+	Scope management - Product Owner
+	Time management - Product Owner
+	Cost management - Product Owner
+	Quality management - All
+	HR management - Team
+	Communications Management - Product Owner/Team 
+	Risk Management - Product Owner
+	Product Procurement - Product Owner - Team	
+	
+	
+	
+
+	
+
+
+
+
+
+
+
+
+
+
+
+	
+
+	
+
+

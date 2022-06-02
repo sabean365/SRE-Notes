@@ -1,0 +1,60 @@
+
+
+GITHUB - Remote repository
+	push and pull
+		command: git push
+		command: git pull - accessing the master remote reporsitory
+	public and private
+		company work would always be private
+		
+git command to pull master:
+	git clone <<url>>
+	cd <<url>>
+	
+Create token
+	command push origin main
+	
+Delete token 
+	On github: revoke all tokens
+	generate new token
+	use token on git
+		git push origin main
+		
+	git remote -v 
+		shows files are synced or not
+		
+	git fetch - get on local repo what is remote
+		download files but decide later if you want to merge or not
+		
+	git branch -r (remote)
+	
+	git branch -a (local)
+	
+	git diff origin/main	
+		will show changes between remote and local
+	
+	git merge origin/main
+		merges the changes
+		
+	Steps when changing on Github
+	1. edit file and commit on GITHUB
+	2. git fetch on local
+	3. git status
+	4. git branch -r git branch -a 
+	5. git diff origin/main
+	6. git merge origin/main 
+	
+	ALWAYS USE GIT STATUS TO SEE IF CHANGES HAVE BEEN MADE.
+	
+	
+	1. create a branch in remote
+	2. create the branch at local
+	3.integrate local and remote branch
+	4. git pull -u origin <<branch-name>>
+	5. git push --set -upstream origin <<new-branch-name>>
+	6. git puah -u origin <<branch-name>>
+
+	
+	
+	
+	

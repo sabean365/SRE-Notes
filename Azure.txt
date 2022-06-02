@@ -1,0 +1,16 @@
+
+DevOps
+	Project Mgmt
+	Source Code Mgmt
+	CI and CD
+	
+Azure 
+	DevOps as a managed system. 
+	
+	Overview
+	Boards - Where you can do Scrum Projects
+		Epic - Project
+		Issue - Story
+		Task - Tasks and Subtasks
+	
+	

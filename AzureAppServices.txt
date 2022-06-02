@@ -1,0 +1,36 @@
+
+
+Azure App Services
+	Dev who uses PaaS
+	A fully managed web hosting for websites
+	Publish your code and it just runs
+	No access to the underlying servers
+	Secured and compliant
+	Integrates with many source countrol and DevOps engines:
+		GitHub, BitBucket, Azure DevOps, DockerHub
+
+	Supported Platforms
+		.NET
+		.NET Core
+		Node.JS
+		Java - JDK
+		Python
+		PHP
+		Supports containers
+		
+	App types
+		Web Apps
+		Web API
+		Web Jobs (batch processes)
+		
+		
+	Snapshot - image of the applications - point in time
+	upgrade? -> take snapshot prior to upgrading application -> recovery point
+	10 am -> SNAPSHOT -> UPGRADE -> upgrade fails? -> RESTORE using SNAPSHOT
+	backup:periodic -> backup image 
+	
+	Scale up - scale resources up - CPU + RAM
+	Scale out - add another server - Rules and Instance Limits } Avg CpuPercentage | Avg memory 
+	
+	App Services when you just want to publish code
+	Use PaaS

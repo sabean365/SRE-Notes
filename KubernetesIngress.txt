@@ -1,0 +1,26 @@
+
+Ingress is a service that can act as a load balancing and a reverse proxy - makes sure applications are available through a single IP Address
+-> Context Path based Routing (COR)
+	Will define multiple http path rules based upon the app
+
+Ingress
+	An API object that manages external access to the services in a cluster, typically HTTP.
+	Ingress may provide load balancing, SSL termination and name-based virtual hosting.
+	
+Terminology
+For clarity, this guide defines the following terms:
+
+-> Node: A worker machine in Kubernetes, part of a cluster.
+-> Cluster: A set of Nodes that run containerized applications managed by Kubernetes. For this example, and in most common Kubernetes deployments, nodes in the cluster are not part of the public internet.
+-> Edge router: A router that enforces the firewall policy for your cluster. This could be a gateway managed by a cloud provider or a physical piece of hardware.
+-> Cluster network: A set of links, logical or physical, that facilitate communication within a cluster according to the Kubernetes networking model.
+-> Service: A Kubernetes Service that identifies a set of Pods using label selectors. Unless mentioned otherwise, Services are assumed to have virtual IPs only routable within the cluster network.
+
+What is Ingress?
+Ingress exposes HTTP and HTTPS routes from outside the cluster to services within the cluster. Traffic routing is controlled by rules defined on the Ingress resource.
+	
+An Ingress may be configured to give Services externally-reachable URLs, load balance traffic, terminate SSL / TLS, and offer name-based virtual hosting. An Ingress controller is responsible for fulfilling the Ingress, usually with a load balancer, though it may also configure your edge router or additional frontends to help handle the traffic.
+
+An Ingress does not expose arbitrary ports or protocols. Exposing services other than HTTP and HTTPS to the internet typically uses a service of type Service.Type=NodePort or Service.Type=LoadBalancer
+
+az network public-ip create --resource-group RG-TEST-DEMO --name myAKSPublicIPForIngress --sku Standard --allocation-method static --query publicIp.ipAddress -o tsv

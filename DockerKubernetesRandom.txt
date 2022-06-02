@@ -1,0 +1,66 @@
+
+
+NGINX is open source software for web serving, reverse proxying, caching, load balancing, media streaming, and more. It started out as a web server designed for maximum performance and stability.
+
+context is just a mapping between user and cluster
+	can have thousands of contexts but can only have one current context
+	
+must specify --namespace or -n
+kubens will give you output of namespaces
+kubectl get nodes
+
+az aks get-credentials --resource-group RG-TEST-DEMO --name test_cluster
+
+winpty kubectl exec -it my-first-pod -- bash
+
+Docker image
+A Docker image is a file used to execute code in a Docker container. Docker images act as a set of instructions to build a Docker container, 
+like a template. Docker images also act as the starting point when using Docker. An image is comparable to a snapshot in virtual machine (VM) environments.
+
+A Docker image contains application code, libraries, tools, dependencies and other files needed to make an application run. 
+When a user runs an image, it can become one or many instances of a container.
+
+Where do pods and clusters come in? Let’s tackle pods first: 
+They’re essentially a wrapper or housing for your individual containers when deploying them in Kubernetes. 
+Containers for your containers, in a sense.
+
+“A pod is a logical wrapper entity for a container to execute on a K8s cluster,” Vempati says. 
+“Think about each pod as a transparent wrapper that would provide a slot for the container.”
+
+Cluster
+A cluster is central to the basic architecture of Kubernetes: If you’re running Kubernetes, you’re running at least one cluster. 
+(Literally, there’s no such thing as a Kubernetes deployment without a cluster.) 
+This cluster is sort of like a central nervous system for your application(s). 
+
+Container → Pod → Cluster
+
+“A container runs logically in a pod (though it also uses a container runtime);
+A group of pods, related or unrelated, run on a cluster. A pod is a unit of replication on a cluster;
+A cluster can contain many pods, related or unrelated [and] grouped under the tight logical borders called namespaces.”
+
+There’s another key concept, the node, which exists between the pod and cluster in this relationship. 
+In Kubernetes, nodes are essentially the machines, whether physical or virtual, that host the pods. 
+(Check out our article on Kubernetes architecture for beginners for more.)
+
+cluster needs a mysql deployment
+	take outside of the cluster and use managed service from Azure
+
+
+From Networking	
+	Server Parameteres: SSL disable follow instructions
+
+	Check Allow public access from any Azure service within Azure to this server
+	
+	kubectl run -it --rm --restart=Never --image=mysql-client -- mysql -h akswebappdb-csk.mysql.database.azure.com -u dbadmin -p
+kubectl run -it --rm --restart=Never --image=mysql:5.7 mysql-client -- mysql -h akswebappdb-csk.mysql.database.azure.com -u dbadmin@aksdb -p
+
+
+mysql --host=akswebappdb.mysql.database.azure.com --user=dbadmin@akswebappdb -p
+
+01-MySql-external  change db
+02-UserManagement  change db passsword
+
+kubectl run -it --rm --restart=Never --image=mysql:5.7 mysql-client -- mysql -h akswebappdb-csk.mysql.database.azure.com -u dbadmin -pPassword123
+
+
+mysql --host=sbserv.mysql.database.azure.com --user=sabean365@sbserv -p

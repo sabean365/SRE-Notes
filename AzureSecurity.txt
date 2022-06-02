@@ -1,0 +1,26 @@
+
+SECURITY
+	How to secure the application
+	VM SECURITY
+		Vnet -> Bastion Host -> disassociate public IP
+		Limit the processes and time on VM -> modify permissions
+		Restrict access to the VM as much as possible
+		Make sure only the required ports are open (22/1389/443/80)
+		Limit access to specific IP addresses when possible
+		Prefer using Bastion for accessing the VM so no need for open ports
+		If the VM is not public facing- place it in a VNet that's not connected to the internet -> private IP only
+		
+	Network Security
+		-> Subnets -> Network Security Groups are applied on the subnet level
+		-> Vnet that contains private resouces only should not be exposed to the internet
+		-> Always use nsg to restrict access to subnets
+		-> Use Service Endpoints / Private Endpoints
+		
+	Azure Security Center
+		-> Microsoft Defender for Cloud
+		-> A central location for monitoring and alerting security related issues
+		-> Displays a summarized list of problems found in the subs resources
+		-> In some cases, allow a single click fix
+		
+		
+		

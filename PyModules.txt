@@ -1,0 +1,54 @@
+
+
+MODULES
+	Python has a way to put(function) definitions in a file and use them in a script or in an interactive instance of the interpreter
+	
+	Module File can contain function definitions, constants, and scripts
+	can import the module using file_name
+	each module is it's own namespace -> has ist's own list of variable names
+	
+	Where does python import modules from?
+	-> same directory
+	-> built-in modules
+	-> dynamically add sys.path.append(<module path>)
+	
+	How to import
+	-> default import <module name>
+	-> modules can import other modules
+	-> CANNOT import the function itself
+
+	-> import module_longname as m -> alias
+		then m.greeting()
+	
+	-> from module_name import function_name
+
+MODULE SCRIPTS
+	__name__ is a global value that is always available
+	
+	if the .py file is run directly,
+	__name__ is "__main__"
+	if it is imported,
+	__name__ is the name of the module file
+	
+	Used in testing
+	test scripts use __name__
+		if __name__ == "__main__":
+			print("Thank you for running my module!")
+		else:
+			print("Thank you for importing __name__")
+			
+	when imported, the above will not be run
+	
+__pycache__
+	does not have to read twice
+	avoids circular imports
+	
+	.pyc folder is a cache of an interpreted module
+	
+dir() function tells you what's available in a module
+dir(object) lists all the attributes of the object
+dir(module) lists all the available methods
+
+method is a function defined on an object within a class
+function is free-standing
+

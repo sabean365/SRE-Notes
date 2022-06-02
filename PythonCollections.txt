@@ -1,0 +1,58 @@
+
+PYTHON COLLECTIONS
+EVERYTHING IN PYTHON IS REFERENCED AND WHAT IS FIXED IS THE REFERENCE - NOT THE VALUE
+
+	List
+		no ARRAY type in Python, so -> list
+		class list
+		sequences in Python that are ordered, indexed, mutable (add, change, and remove elements) and allowed duplicates
+		declared with square brackets []
+		can hold any data type and are of arbitrary length
+		elements are indexed [0]	
+		negative indexes count from the back of the list
+		colon selects a range
+		[beginning index:non-inclusive ending index:step] - can use negative numbers to go backwards by step
+		
+	Tuples
+		class tuple
+		sequences of ordered, indexed, IMMUTABLE, and allowed duplicates -> is set (cannot be changed)
+		declared with a comma (parentheses not necessary)
+		guaranteed values -> as an identity
+		like username, password
+		read in values from a database as tuples because that data is fixed
+		python does not store in db, it just identifies data that comes from the db
+		only functions are count and index
+		you cannot alter a tuple, but you can change a list in a tuple
+		+ operator can return a new tuple without changing the two underlying, such as c = (a + b) where a, b, c are tuples
+		two of the same tuples are the same object
+	
+	Set - set math methods
+		class set
+		sets are unordered, unindexed, mutable, does NOT allow duplicates
+		declared with curly braces {} and at least one element and set constructor
+		must contain unique elements that cannot be accessed or indexed
+		good for removing duplicates
+		set has the most methods of any Python type - identity methods
+		CANNOT add sets but can add by c = {*a + *b} where a and b are sets
+		frozenset -> immutable
+		can have a set of frozensets but not a set of sets
+		frozensets are different objects
+		.discard(element) - removes element
+		
+	Dictonary 
+		class dict
+		sequence of unordered, key/value pairs, mutable
+		also curly brackets but are a key, value pair	
+		are ordered by keys and values in insertion order
+		.keys() returns keys
+		.values() returns values
+		.items() returns key, value pairs
+		.pop(key) removes the value and key and returns it
+		.setdefault(key,value)
+		dict.get(key) or dict[key] -> .get() returns none whereas subscript raises a KeyError - dict[] is more pythonic
+		can call the method .get off of the dictionary class or a function, but you can't call an index
+		
+		dict.fromkeys(["x", "y", "z"], None) #instantiating an empty dictionary
+		
+		Casting from a collection to another will return a new collection object of that casted type
+		list(set([1, 2, 2, 3])) -> best way to remove duplicates

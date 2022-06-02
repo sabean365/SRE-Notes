@@ -1,0 +1,12 @@
+JIRA SOFTWARE
+
+
+JIRA HEIRARCHY
+	-> Collection of Projects
+		-> project colection of issues (software, service managment)
+			-> Issue a work item of the project - description - priority - acceptance criteria
+			
+			
+https://planningpokeronline.com/
+
+

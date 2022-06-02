@@ -1,0 +1,92 @@
+
+
+DOCKER - Major Infrastructure Shifts
+	Replaced Main Frames
+	Baremetal to Virtual 00's -> Datacenter to Cloud 10's -> Host to Container (Serverless)
+	
+	Applications must be containerized
+		Over 24B pulls of docker in 2017
+		By 2020, more than 50% of global containers in production
+	
+	DOCKER IS ALL ABOUT SPEED
+	Develop Faster.
+	Build Faster.  
+	Test Faster.
+	Deploy Faster.  
+	Update Faster.  
+	Recover Faster.
+
+	Create a container of MySQL or another SQL and run it across all machines/platforms
+	
+	IT Issue - 80% Maintenance and 20% Innovation -> Docker changes this
+	
+	PayPal is a great use case 150,000 containers 50% dev productivity boost
+	MetLife 70% reduction in VM 67
+	
+	Layers in Docker
+		
+	Docker container is a process - not a VM
+	
+	To run MySQL -> docker container run --name db --publish 3306:3306 --detach -e MYSQL_RANDOM_ROOT_PASSWORD=yes mysql
+	To run a webserver -> docker container run -d --name webserver -p 8080:80 httpd
+	For Nginx -> docker container run -d --name proxy -p 80:80 nginx
+	
+	-i interactive allows you to get inside the container
+	-t allocate a pseudo tty
+	docker container exec - to run kubernetes inside a container: winpty docker container exec -it db bash
+	-p publishes the containers port to the host
+	
+	docker container run --publish 8081:80 --name web -d nginx
+	go to localhost:8081 will see nginx page
+	
+	docker container inspect web
+	-> networking will show port, IP address
+	every container you create will get its own IP address 
+	
+	Network types found here -> https://docs.docker.com/network/#network-drivers
+	host: For standalone containers, remove network isolation between the container and the Docker host, and use the host’s networking directly.
+	bridge: The default network driver. If you don’t specify a driver, this is the type of network you are creating. Bridge networks are usually used when your applications run in standalone containers that need to communicate.
+	
+	https://hub.docker.com/_/busybox
+	docker container run -d --name my_busybox --network my_dummy_net busybox
+	docker container run -it --name my_busybox_2 --network my_dummy_net busybox
+
+	docker image tag nginx nginx:alpha1 - creates an image - cannot push or pull
+	
+	instead use: docker image tag nginx nginx:alpha1
+	winpty docker login
+	docker image push sabean365/nginx:alpha1
+	docker pull sabean365/nginx:alpha1
+
+	Directory for nodejs file 
+	Java is compiled language - JAR needs to be distributed
+	JavaScript is interpreted - not compiled prior to runtime
+	
+
+
+#OS to start with
+#install 
+
+FROM node:16-alpine
+
+RUN apk add --no-cache make python2 g++
+
+#Java copy the JAR file
+#Interpreted - must copy entire to container
+
+#create a directory for app
+#mkdir /app and cd to /app
+WORKDIR /app
+
+#COPY source code from host machine
+COPY . .
+
+#nodeJS specific build command
+RUN yarn install --production
+
+#Start the app java -jar app.jar, node index.js, pythin main.py
+CMD [ "node", "src/index.js"]
+
+EXPOSE 3000
+
+

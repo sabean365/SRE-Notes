@@ -1,0 +1,107 @@
+
+
+AZURE RESOURCES - components like storage, VM, networks, database, APP resources, code and anything else available to build cloud solutions
+	Resource group -  container to manage and aggregate resources in a single unit
+	-> Resources can exist in only one resource group
+	-> Resources can exist in different regions.
+	-> Resources can be moved to different resource groups.
+	-> Applications can utilize multiple resource groups.
+	
+	Example:
+	web + db, VM and storage in same group
+	OR
+	web + db AND VM AND Storage in three groups
+	
+	Azure Resource Manager
+	
+	Azure Portal	Azure PowerShell	AZURE CLI	REST Clients
+					
+					SDKs
+					
+		AZURE RESOURCE MANAGER
+		
+	Resource groups can be created in Azure with tags with project name and value name
+	If you delete a resource group, you have to go through a lot of steps as checks to make sure you want to delete it, including locks
+	If you enable a read-only lock, the resource group cannot be deleted
+	
+	
+Azure Subscriptions
+	Microsoft Azure Account
+	|       |			|
+Dev Subs  Test Subs  Production Subs
+
+Billing Boundary: generate separate billing reports and invoice for each subs
+Access Control Boundary: manage and control access to the resources that users can provision with specific subs
+
+Workload Strategy
+	-> Application level subs
+	-> Mission level access subs
+	-> Business type subs
+	-> Geo-location subs
+	
+	IAM -> Identity Access Management -> access control of subs
+		-> Active Directory - Azure AD
+			-> User wants to access Skype, Outlook (needs user profile -> Identity)
+			-> user wants to have access to subs, db, 
+			-> active directory sends token to verified client
+			-> client token and active directory both send token to centralized db and if they match, there is verification
+			Benefits
+			-> Centralized user management
+			-> Trust relationship between AD and services
+			-> Services manage authorization
+		-> Identity	
+			-> identity can be user or application
+			-> used for authentication
+			-> user with username pword
+			-> an application with secret keys
+		
+	Process of authentication
+	-> user sends username and password -> if information matches -> validate
+	-> server will respond - accept or deny
+	
+	MFE - Multifactor authentication -> like a code to your phone
+	
+	AZURE ROLE BASED ACCESS CONTROL - AZURE RBAC
+		-> Allow one user top manage a VM in a sub and another user to manage virtual networks
+		-> Allow DBA group to manage SQL dbs in a subs
+		-> 
+		
+	3 Key Components
+	-> Security principle
+	-> Role
+		set of permissions -> built-in or custom
+	-> Scope can be applied to any level
+		
+	-> managed identity
+	
+Cost management
+	-> Conduct cost analysis
+	-> Create a budget -> can set budget at any level (manager, subscription, dev, etc) -> budget boundary will alert management
+	-> Review recommendations
+	-> Export data
+	
+	Azure reservations -> applying savings 
+	Hybrid Benefits - Use Windows Server and SQL servier on-premises licenses
+	Azure Credits - montly benefits and deals
+	Regions - choose low cost regions and locations
+	
+	Azure cost management to monitor, budget, alert and reommendation
+	Autoscaling - automatically changes bases upon usage
+	Azure Monitor to scale down under-utilized resources
+
+Fault Tolerance
+
+	Web		VM			SQL
+	
+	Servers				Disk Arrays
+
+Agility - flexibility in changes in computing - fault tolerance, highly reliable, redundancy
+
+Manual - too much beaurocracy
+Cloud - can just purchase from console with mgmt approval
+
+Fail-over - disaster recovery
+	keep redundant data in another region so that data is not lost
+	
+	
+	
